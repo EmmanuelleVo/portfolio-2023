@@ -1,0 +1,4 @@
+// Convert any px value into its rem equivalent
+@function r( $number ) {
+  @return calc($number / $global-font-size) * 1rem;
+}

@@ -1,0 +1,7 @@
+.u-vertical-center {
+  @include vertical-center();
+}
+
+.u-center-block {
+  @include center-block();
+}

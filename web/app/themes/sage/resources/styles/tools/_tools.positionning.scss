@@ -1,0 +1,20 @@
+// - @include vertical-center()
+// **********************************************************
+// Center an element vertically (assuming the parent element has position: relative).
+// **********************************************************
+@mixin vertical-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// - @include center-block()
+// **********************************************************
+// Center an element horizontally
+// **********************************************************
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,23 @@
+///* ========================================================================
+//   #FONT-SIZE
+//   ======================================================================== */
+// Convert px units to rems with fallback to older browsers.
+
+@mixin font-size($font-size, $line-height: auto, $important: false) {
+
+  @if ($important == true) {
+    $important: !important;
+  } @else if ($important == false) {
+    $important: null;
+  } @else {
+    @error "`#{$important}` needs to be `true` or `false`.";
+  }
+
+  font-size: $font-size $important;
+  font-size: calc($font-size / $global-font-size) * 1rem;
+
+  @if ($line-height != "auto") {
+    line-height: $line-height;
+    line-height: calc($line-height / $global-font-size) * 1rem;
+  }
+}

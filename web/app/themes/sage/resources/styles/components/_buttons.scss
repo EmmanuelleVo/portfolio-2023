@@ -1,0 +1,70 @@
+/* ==========================================================================
+   #BUTTONS
+   ========================================================================== */
+
+/**
+ * This is an example component. Extend inuitcss by building your own components
+ * that make up your UI. Component classes are prefixed with a `c-`.
+ */
+
+/**
+ * 1. Allow us to style box model properties.
+ * 2. Line different sized buttons up a little nicer.
+ * 3. Make buttons inherit font styles (often necessary when styling `input`s as
+ *    buttons).
+ * 4. Reset/normalize some styles.
+ * 5. Force all button-styled elements to appear clickable.
+ */
+
+.c-btn {
+  display: inline-flex !important; /* [1] */
+  align-items: center; /* [2] */
+  font: inherit; /* [3] */
+  text-align: center; /* [4] */
+  margin: 0; /* [4] */
+  cursor: pointer; /* [5] */
+  transition: 300ms ease background !important;
+  padding: r(10px) r(30px);
+  text-decoration: none;
+
+  & svg{
+    margin-left: r(10px);
+  }
+
+  &--primary{
+    background-color: $cGrey;
+    color: $cWhite !important;
+    transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+
+    &::before{
+      content: none !important;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $cSecond;
+      color: $cGrey !important;
+      transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+    }
+  }
+
+
+  &--secondary{
+    background-color: $cLightGrey;
+    color: $cGrey !important;
+    transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+
+    &::before{
+      content: none !important;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $cSecond;
+      color: $cGrey !important;
+      transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+    }
+  }
+}

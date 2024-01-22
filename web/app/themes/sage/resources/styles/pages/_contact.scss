@@ -1,0 +1,44 @@
+.contact {
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: r(50px);
+  }
+
+  &__content {
+    margin: r(50px) 0;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: r(30px);
+    margin-bottom: r(50px);
+  }
+
+  &__data {
+    display: flex;
+    align-items: center;
+    gap: r(30px);
+
+    & a {
+      text-decoration: none;
+      color: $cGrey;
+      transition: color .3s ease;
+
+      &:hover {
+        color: $cMain;
+        transition: color .3s ease;
+        .contact__data svg path {
+          fill: $cMain;
+          transition: fill .3s ease;
+        }
+      }
+    }
+  }
+
+  &__form {
+    width: 50%;
+  }
+}

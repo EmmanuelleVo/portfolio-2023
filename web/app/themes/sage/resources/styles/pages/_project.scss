@@ -1,0 +1,39 @@
+.project {
+  &__title {
+    margin-bottom: 0;
+  }
+
+  &__date {
+    display: block;
+    font-size: r(14px);
+    font-weight: 600;
+    margin: r(20px) 0;
+  }
+
+  &__container {
+    display: flex;
+    gap: r(30px);
+  }
+
+  &__content.wysiwyg {
+    margin-top: 0;
+    & {
+      em, b, strong{
+        color: $cGrey !important;
+      }
+      a {
+        color: $cMain !important;
+        text-decoration: none;
+        &::before {
+          background-color: $cMain;
+        }
+      }
+
+      blockquote {
+        border-left-color: $cMain;
+      }
+    }
+  }
+
+
+}

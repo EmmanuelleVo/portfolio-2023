@@ -1,0 +1,386 @@
+/*! wysiwyg.css v0.0.3 | MIT License | github.com/jgthms/wysiwyg.css */
+// Colours
+/* sass-disable */
+
+
+
+$grey-light: hsl(0, 0%, 50%) !default
+
+$background: hsl(0, 0%, 95%) !default
+$border: $cBlack !default
+
+$text: $cBlack !default
+$text-code: $cBlack !default
+$text-strong: $cBlack !default
+$text-light: $cWhite !default
+$text-headings: $cBlack !default
+$text-blockquote: $cBlack !default
+
+$link: $cBlack !default
+$link-hover: darken($cBlack, 10) !default
+$link-visited: darken($cBlack, 10) !default
+
+$background-code: $background !default
+$background-ins: lime !default
+$background-mark: $cBlack !default
+
+$table-background: hsl(0, 0%, 100%) !default
+$table-background-even: hsl(0, 0%, 98%) !default
+$table-background-hover: hsl(0, 0%, 96%) !default
+$table-border: $border !default
+$table-thead: $cBlack !default
+
+// Spacing
+$line-height: 1.4 !default
+$margin: 0.7em !default
+
+// Typography
+$family-wysiwyg: "Poppins", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important
+$family-code: "Inconsolata", "Consolas", "Monaco", monospace !default
+
+$weight-strong: 700 !default
+$weight-headings: 700 !default
+
+// Options
+$closer-lists: false !default
+$custom-colors: true !default
+$custom-fonts: false !default
+$font-smoothing: false !default
+$heading-borders: false !default
+$show-underline: false !default
+$table-hover: false !default
+$table-striped: false !default
+$visited-links: false !default
+
+
+=cell($font-size)
+  font-size: #{$font-size}em
+  padding: calc(($margin / 2) / $font-size)
+
+=heading($font-size, $with-border: false, $top-space: false)
+  font-size: #{$font-size}em
+  margin-bottom: calc($margin / $font-size)
+
+  @if $heading-borders and $with-border
+    border-bottom: 1px solid $border
+    padding-bottom: ($margin / $font-size)
+
+
+.wysiwyg
+  line-height: $line-height
+  margin-top: r(20px)
+  @if $custom-colors
+    color: $text !important
+  @if $custom-fonts
+    font-family: $family-wysiwyg
+  @if $font-smoothing
+    -moz-osx-font-smoothing: grayscale
+    -webkit-font-smoothing: antialiased
+
+  a
+    position: relative
+    display: inline-block
+    @if $custom-colors
+      color: $link
+      transition: 250ms ease color
+      @if $visited-links
+        &:visited
+          color: $link-visited
+    @if $show-underline
+      border-bottom: 1px solid
+    @else
+      &::before 
+        content: ""
+        position: absolute
+        bottom: 0px
+        left: 0
+        right: 0
+        height: 1px
+        background-color: $cBlack
+        transform-origin: bottom right
+        transform: scaleX(0)
+        transition: transform 0.5s ease
+        @include mq($until: laptop)
+          content: none
+
+      &:hover 
+        &::before 
+          transform-origin: bottom left
+          transform: scaleX(1)
+
+  abbr
+    border-bottom: 1px dotted
+    cursor: help
+
+  cite
+    font-style: italic
+
+  hr
+    background: $border
+    border: none
+    display: block
+    height: 1px
+    margin-bottom: $margin
+    margin-top: $margin
+
+  img
+    vertical-align: text-bottom
+
+  ins
+    background-color: $background-ins
+    text-decoration: none
+
+  mark
+    background-color: $background-mark
+
+  em
+    font-style: italic
+    color: $cBlack !important
+
+
+  small
+    font-size: 0.8em
+
+
+  strong
+    font-weight: $weight-strong
+    @if $custom-colors
+      color: $text-strong !important
+
+  sub,
+  sup
+    font-size: 0.8em
+
+  sub
+    vertical-align: sub
+
+  sup
+    vertical-align: super
+
+  p, dl, ol, ul, blockquote, pre, table
+    margin-bottom: $margin
+
+    &:last-child
+      margin-bottom: 0
+
+  p
+    font-weight: 400
+    &:empty
+      display: none
+
+    @media screen and (max-width: 475px)
+      font-size: r(14px)
+
+  h1, h2, h3, h4, h5, h6
+    font-weight: $weight-headings
+    line-height: 1.2
+    //word-break: break-all
+
+    &:first-child
+      margin-top: 0
+
+    @if $custom-colors
+      color: $text-headings !important
+
+  h1
+    +heading(2.4, true)
+    line-height: 1
+
+  h2
+    +heading(1.6, true, true)
+    font-size: r(48px)
+    line-height: 1.1
+    @media screen and (max-width: 768px)
+      font-size: r(40px)
+
+    @media screen and (max-width: 475px)
+      font-size: r(30px)
+
+
+  h3
+    +heading(1.3)
+    font-size: r(40px)
+    @media screen and (max-width: 768px)
+      font-size: r(30px)
+
+    @media screen and (max-width: 475px)
+      font-size: r(23px)
+
+
+  h4
+    +heading(1.2)
+    font-size: r(30px)
+    @media screen and (max-width: 768px)
+      font-size: r(23px)
+
+    @media screen and (max-width: 475px)
+      font-size: r(20px)
+
+
+  h5
+    +heading(1.1)
+
+  h6
+    +heading(1)
+
+  @if $closer-lists
+    p
+      & + dl,
+      & + ol,
+      & + ul
+        margin-top: -$margin
+
+  dd
+    margin-left: $margin
+
+  ol,
+  ul
+    list-style-position: outside
+    //margin-left: $margin
+    @media screen and (max-width: 767px)
+      margin-left: 0
+
+  ol
+    list-style-type: decimal
+
+    ol
+      list-style-type: lower-alpha
+
+      ol
+        list-style-type: lower-roman
+
+        ol
+          list-style-type: lower-greek
+
+          ol
+            list-style-type: decimal
+
+            ol
+              list-style-type: lower-alpha
+
+
+  blockquote
+    border-left: 4px solid $border
+    padding: 0.6em 1.2em
+    @if $custom-colors
+      color: $text-blockquote
+
+    p
+      margin-bottom: 0
+
+  code,
+  kbd,
+  samp,
+  pre
+    -moz-osx-font-smoothing: auto
+    -webkit-font-smoothing: auto
+    background-color: $background-code
+    color: $text
+    font-size: 0.9em
+    @if $custom-fonts
+      font-family: $family-code
+
+  code,
+  kbd,
+  samp
+    border-radius: 3px
+    line-height: calc($line-height / 0.9)
+    padding: 0.1em 0.4em 0.2em
+    vertical-align: baseline
+    @if $custom-colors
+      color: $text-code
+
+  pre
+    overflow: auto
+    padding: 1em 1.2em
+
+    code
+      background: none
+      font-size: 1em
+      line-height: 1em
+
+  figure
+    margin-bottom: $margin * 2
+    text-align: center
+
+    &:first-child
+      margin-top: 0
+
+    &:last-child
+      margin-bottom: 0
+
+  figcaption
+    font-size: 0.8em
+    // margin-top: $margin / 1.6
+    @if $custom-colors
+      color: $text-light
+  table
+    width: 100%
+
+    pre
+      white-space: pre-wrap
+
+  th,
+  td
+    +cell(1)
+    border: 1px solid $table-border
+    line-height: 1.4
+
+  thead,
+  tfoot
+    tr
+      @if $table-striped
+        background-color: $table-border
+      @else
+        background-color: $table-background-hover
+
+    th,
+    td
+      +cell(0.9)
+      @if $custom-colors
+        color: $table-thead
+
+      code
+        background-color: $table-background
+
+  tbody
+    tr
+      background-color: $table-background
+      @if $table-striped
+        &:nth-child(even)
+          background-color: $table-background-even
+        @if $table-hover
+          &:hover
+            background-color: $table-background-hover
+      @else
+        @if $table-hover
+          &:hover
+            background-color: $table-background-even
+
+
+  & ul li
+    position: relative
+    padding-left: r(20px)
+    font-weight: 400
+    @media screen and (max-width: 475px)
+      font-size: r(14px)
+    &:before
+      content: "\2022"
+      color: $cBlack
+      font-weight: 400
+      display: inline-block
+      width: 1em
+      position: absolute
+      margin-left: r(-20px)
+
+  & ol
+    margin-left: r(32px)
+
+  & ol li
+    position: relative
+    padding-left: r(10px)
+    font-weight: 400
+    @media screen and (max-width: 475px)
+      font-size: r(14px)
+
+

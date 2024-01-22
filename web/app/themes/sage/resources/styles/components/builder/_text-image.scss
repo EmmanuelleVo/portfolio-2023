@@ -1,0 +1,88 @@
+.builder {
+  &__figure {
+    max-width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 0 !important;
+    @include mq($until: tablet) {
+      height: 400px;
+    }
+    @include mq($until: mobile) {
+      height: 250px;
+    }
+    &--true {
+      height: 100%;
+      flex: 0 1 auto;
+      @include mq($until: laptop) {
+        height: 500px;
+      }
+
+      @include mq($until: tablet) {
+        height: 400px;
+      }
+      @include mq($until: mobile) {
+        height: 250px;
+      }
+    }
+  }
+  &__figure-true {
+    order: 2;
+    @include mq($until: laptop) {
+      width: 100%;
+    }
+  }
+
+  &__figure-false {
+    @include mq($until: laptop) {
+      order: 1;
+    }
+  }
+
+  &__figure-centered {
+    &--true {
+      background-position: center center;
+    }
+  }
+
+  &__content-bg {
+    &--false {
+      background-color: none;
+    }
+    &--true {
+      padding: r($paddingBig) 0;
+      margin: r($marginBig) auto;
+      @include mq($until: mobile) {
+        padding: r($paddingSmall) 0;
+        margin: r($marginMedium) auto;
+      }
+    }
+
+    & h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $cWhite;
+    }
+
+    & .wysiwyg {
+      & * {
+        color: $cWhite !important;
+      }
+    }
+  }
+
+  &--black {
+    background-color: $cBlack;
+
+    & .c-btn--primary {
+      background-color: $cWhite;
+    }
+  }
+
+  & .builder__content-container {
+    margin: 0 auto;
+  }
+}

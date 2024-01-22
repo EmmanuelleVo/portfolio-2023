@@ -1,0 +1,19 @@
+///* ========================================================================
+//   #OVERLAY
+//   ======================================================================== */
+
+// Mixin to cover a bloc in position relative with a color
+// .usage {
+//   @include overlay();
+// }
+
+@mixin overlay($color: $cBlack, $opacity: 0.5) {
+    content: "" !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    background-color: rgba($color, $opacity);
+}

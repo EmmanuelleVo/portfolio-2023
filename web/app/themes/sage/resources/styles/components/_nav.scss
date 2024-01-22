@@ -1,0 +1,283 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__links{
+    display: flex;
+  }
+
+  &__links-container {
+    display: flex;
+    @include mq($until: laptop) {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: auto;
+      width: 300px; //TODO: minwidth
+      height: 100%;
+      z-index: 5;
+      visibility: hidden; //TODO: remove
+      /*transform: translateX(100%); TODO: uncomment */
+      opacity: 0; //TODO: 0
+      padding: r(30px);
+      transform: translateX(300px);
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      margin-right: 0;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    @include mq($until: mobile) {
+      width: 250px;
+      transform: translateX(250px);
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-item {
+    & a {
+      text-decoration: none;
+      color: $cGrey;
+      transition: color 300ms ease;
+
+      &:hover {
+        color: $cMain;
+        transition: color 300ms ease;
+      }
+    }
+  }
+
+  .current-menu-item {
+    &:before {
+      padding: 0 0.5rem;
+      content: "•";
+      font-size: 1rem;
+      color: #ff8983;
+    }
+
+    & a {
+      font-weight: bold;
+    }
+  }
+
+  &__link, .menu-item {
+    position: relative;
+    display: block;
+    color: $cBlack;
+    padding: r(25px) r(25px);
+
+    &.nuxt-link-active{
+      & .nav__link__textWrapper {
+        &.navActive {
+          & span {
+            &::before {
+              transform: scaleX(0.3) !important;
+            }
+          }
+        }
+      }
+    }
+    @include mq($until: laptop) {
+      color: $cWhite;
+      font-size: r(20px);
+      width: 100%;
+    }
+
+    &__textWrapper {
+      display: flex;
+      align-items: center;
+      @include mq($until: laptop) {
+        justify-content: center;
+      }
+
+      &.navActive {
+        & span {
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: $cBlack;
+            transform-origin: bottom left;
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+            @include mq($until: laptop) {
+              content: none;
+            }
+          }
+
+          &:hover {
+            &::before {
+              transform-origin: bottom left;
+              transform: scaleX(1);
+            }
+          }
+        }
+      }
+
+      & img {
+        margin-left: r(6px);
+      }
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+  }
+
+  &__dropdown, & .sub-menu {
+    position: absolute;
+    top: 100%;
+    width: r(250px);
+    left: -40%;
+    padding: r(20px);
+    perspective: 1000px;
+    background-color: $cLightGrey;
+    border-radius: r(5px);
+    transform: translateY(r(10px)) scaleY(0.98);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+    transition: 300ms ease visibility, 300ms ease opacity, 300ms ease transform;
+    @include mq($until: laptop) {
+      width: 100%;
+      position: relative;
+      top: 30px;
+      left: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    &:before, .pll-parent-menu-item:before {
+      position: absolute;
+      top: r(-8px);
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      z-index: 2;
+      content: "";
+      width: r(18px);
+      height: r(18px);
+      border-radius: r(4px);
+      background-color: $cLightGrey;
+      transform: rotate(45deg);
+      @include mq($until: laptop) {
+        content: none;
+      }
+    }
+  }
+
+  &__link--dropdown:hover, & .pll-parent-menu-item > a:hover, .pll-parent-menu-item:hover,
+  &__link--dropdown:focus, & .pll-parent-menu-item > a:focus {
+    & .nav__dropdown--animated, .sub-menu {
+      transition: 300ms ease visibility, 300ms ease opacity,
+        300ms ease transform;
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0) scaleY(1);
+    }
+  }
+
+  &__sublink {
+    position: relative;
+    z-index: 5;
+    padding: r(10px) 0;
+    display: block;
+    width: 100%;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      & .nav__sublink__label {
+        &::before {
+          transform-origin: bottom left;
+          transform: scaleX(1);
+        }
+      }
+    }
+
+    &__label {
+      font-size: r(14px);
+      color: $cBlack;
+      margin-left: r(20px);
+      line-height: 1.2em;
+      position: relative;
+      @include mq($until: laptop) {
+        margin-left: 0;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: $cLightGrey;
+        transform-origin: bottom right;
+        transform: scaleX(0);
+        transition: transform 0.5s ease;
+        @include mq($until: laptop) {
+          content: none;
+        }
+      }
+    }
+  }
+}
+
+.menu-open {
+  overflow-y: hidden;
+  & .nav {
+    &__links-container {
+      @include mq($until: laptop) {
+        opacity: 1;
+        visibility: visible;
+        //overflow-y: scroll;
+        overflow-x: hidden;
+        transform: translateX(0);
+        transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        z-index: 5;
+        background-color: $cBlack;
+        z-index: 9999;
+      }
+    }
+  }
+}
+
+.hamburger {
+  display: none !important;
+  z-index: 9998 !important;
+  outline: none;
+  border-radius: 50%;
+
+  @include mq($until: laptop) {
+    display: inline-block !important;
+  }
+
+  &:hover {
+    opacity: 1 !important;
+  }
+
+  &.is-active {
+    &:hover {
+      opacity: 1 !important;
+    }
+  }
+}
+

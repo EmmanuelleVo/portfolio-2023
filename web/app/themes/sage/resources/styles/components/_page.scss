@@ -1,0 +1,81 @@
+/* ==========================================================================
+   #PAGE
+   ========================================================================== */
+
+/**
+ * Simple page-level setup.
+ *
+ * 1. Set the default `font-size` and `line-height` for the entire project,
+ *    sourced from our default variables. The `font-size` is calculated to exist
+ *    in ems, the `line-height` is calculated to exist unitlessly.
+ * 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ * 3. Ensure the page always fills at least the entire height of the viewport.
+ */
+
+html {
+  font-size: calc($global-font-size / 16px) * 1em; /* [1] */
+  line-height: calc($global-line-height / $global-font-size); /* [1] */
+  overflow-y: scroll; /* [2] */
+  min-height: 100%; /* [3] */
+  font-family: $global-font-stack;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $cWhite;
+}
+
+
+.page {
+  &__wrapper {
+    padding: r($paddingBig) 0;
+    @include mq($until: tablet) {
+      padding: r($paddingMedium) 0;
+    }
+    @include mq($until: mobile) {
+      padding: r($paddingSmall) 0;
+    }
+
+    &--colored {
+      background-color: $cGrey;
+    }
+  }
+  &__error {
+    padding: r($paddingBig) 0;
+    text-align: center;
+    @include mq($until: tablet) {
+      padding: r($paddingMedium) 0;
+    }
+    @include mq($until: mobile) {
+      padding: r($paddingSmall) 0;
+    }
+
+    & .wysiwyg {
+      margin-bottom: r($marginSmall);
+    }
+  }
+
+  &__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: r($marginMedium);
+  }
+
+  &__archive {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    @include mq($until: laptop) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include mq($until: mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

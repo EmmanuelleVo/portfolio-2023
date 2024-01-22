@@ -1,0 +1,60 @@
+$titleSizeOne: 42px;
+$titleSizeTwo: 36px;
+$titleSizeThree: 30px;
+$titleSizeFour: 24px;
+$titleSizeFive: 20px;
+
+.title {
+  line-height: 1.3em;
+  font-weight: 700;
+  margin-bottom: r(30px);
+  &--big {
+    font-size: r($titleSizeOne) !important;
+    color: $cGrey;
+    @include mq($until: tablet) {
+      font-size: r($titleSizeTwo) !important;
+    }
+    @include mq($until: mobile) {
+      font-size: r($titleSizeThree) !important;
+    }
+  }
+
+  &--medium {
+    font-size: r($titleSizeTwo) !important;
+    @include mq($until: tablet) {
+      font-size: r($titleSizeThree) !important;
+    }
+    @include mq($until: mobile) {
+      font-size: r($titleSizeFour) !important;
+    }
+  }
+
+  &--small {
+    font-size: r($titleSizeThree) !important;
+    @include mq($until: tablet) {
+      font-size: r($titleSizeFour) !important;
+    }
+    @include mq($until: mobile) {
+      font-size: r($titleSizeFive) !important;
+    }
+  }
+
+  &--white {
+    color: $cWhite;
+  }
+
+  &--black {
+    color: $cBlack;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: r(20px);
+    margin-bottom: r(30px);
+    & .title {
+      margin-bottom: 0;
+    }
+  }
+}

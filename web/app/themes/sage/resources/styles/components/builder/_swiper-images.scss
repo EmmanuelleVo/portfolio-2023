@@ -1,0 +1,56 @@
+.builder {
+  margin: r($marginBig) auto !important;
+  &__swiper-image {
+    height: 664px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &__swiper-btns {
+    position: absolute;
+    top: 45%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__swiper-btn {
+    position: absolute;
+    &--1 {
+      left: 65px;
+    }
+
+    &--2 {
+      right: 65px;
+      transform: rotate(180deg);
+    }
+  }
+
+  & .swiper-slide {
+    position: relative;
+  }
+
+  & .swiper-container {
+    height: 735px;
+    position: relative;
+    overflow: visible;
+  }
+
+  & .swiper-pagination-bullet-active {
+    background-color: $cBlack;
+  }
+
+  &__swiper-alt {
+    font-style: italic;
+    text-align: center;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 35px;
+    font-size: r(14px);
+    color: lighten($cBlack, 10%);
+  }
+}

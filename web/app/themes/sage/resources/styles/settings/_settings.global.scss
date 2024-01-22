@@ -1,0 +1,49 @@
+///* ========================================================================
+//   #GLOBAL
+//   ======================================================================== */
+
+// The global settings file contains any project-wide variables; things that
+// need to be made available to the entire codebase.
+
+// Standardise some UI treatments.
+$global-font-size: 18px !default;
+$global-line-height: 24px !default;
+
+$global-family-font: 'Montserrat';
+
+$global-font-stack: $global-family-font, Helvetica, Arial, sans-serif;
+
+$global-radius: 2px !default;
+$global-transition: all 300ms ease !default;
+
+$global-padding: 20px;
+$global-margin-bottom: 50px;
+
+$paddingBig: 100px;
+$paddingMedium: 75px;
+$paddingSmall: 50px;
+
+$marginBig: 100px;
+$marginMedium: 50px;
+$marginSmall: 30px;
+
+$global-box-shadow: 0 2px 11px 0 rgba(185, 185, 185, 50) !default;
+
+/* WRAPPER SETTINGS */
+$wrapper-width: 1200px !default;
+$wrapper-padding-right: $global-padding;
+$wrapper-padding-left: $global-padding;
+$gutter-width: 24px;
+
+/* FONT-SIZE DEFAULT HEADINGS, SEE ELEMENTS/_headings.scss*/
+$font-size-h1:  36px !default;
+$font-size-h2:  28px !default;
+$font-size-h3:  24px !default;
+$font-size-h4:  20px !default;
+$font-size-h5:  18px !default;
+$font-size-h6:  16px !default;
+
+// In case you don't have control over generated `width` and `height` attributes
+// on `<img>` elements in your markup, but still want the images to be fluid,
+// set this to `false`.
+$static-images: true !default;

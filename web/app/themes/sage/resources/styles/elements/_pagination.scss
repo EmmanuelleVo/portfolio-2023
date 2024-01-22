@@ -1,0 +1,35 @@
+.pagination{
+  margin-top: r($marginMedium);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & li{
+    padding: r(10px);
+    color: $cBlack;
+
+    &.active{
+      color: $cBlack;
+      font-weight: 900;
+    }
+  }
+
+  &__prev,
+  &__next{
+    display: inline-block;
+    background-color: $cLightGrey;
+    padding: r(10px);
+
+    & svg{
+      & g{
+        fill: $cWhite;
+      }
+    }
+  }
+
+  &__prev{
+    & svg{
+      transform: rotate(180deg);
+    }
+  }
+}

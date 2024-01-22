@@ -1,0 +1,156 @@
+.modal {
+  &__btn {
+    cursor: pointer;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+  }
+
+  &__content {
+    position: relative;
+    width: 50%;
+    max-height: 300px;
+    padding: r(16px);
+    overflow: auto;
+    border-radius: 4px;
+  }
+
+  &__html {
+    overflow: hidden;
+  }
+
+  &__info {
+    display: block;
+    color: $cWhite;
+    text-align: right;
+    float: right;
+    margin-top: r(10px);
+    @include mq($until: tablet) {
+      font-size: r(14px); 
+    }
+    @include mq($until: mobile) {
+      font-size: r(12px); 
+    }
+  }
+}
+
+.search{
+  display: inherit;
+}
+
+#search-box {
+  visibility: hidden;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999999;
+
+  .container {
+    display: table;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    .close {
+      position: absolute;
+      right: 32px;
+      top: 32px;
+      width: 32px;
+      height: 32px;
+      opacity: 0.3;
+    }
+    .close:hover {
+      opacity: 1;
+    }
+    .close:before,
+    .close:after {
+      position: absolute;
+      left: 15px;
+      content: " ";
+      height: 33px;
+      width: 2px;
+      background-color: $cWhite;
+    }
+    .close:before {
+      transform: rotate(45deg);
+    }
+    .close:after {
+      transform: rotate(-45deg);
+    }
+    .search-main {
+      display: table-cell;
+      vertical-align: middle;
+      .search-inner {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      form {
+        position: relative;
+      }
+      input {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: r(12px) r(12px) r(12px) 0;
+        font-size: r(72px);
+        height: 84px;
+        border-bottom: 2px solid $cWhite;
+        display: block;
+        color: $cWhite;
+        margin-bottom: 0;
+        width: 100%;
+        transform: scale3d(0, 1, 1);
+        transform-origin: 0% 50%;
+        transition: transform 3s;
+        &:focus {
+          outline: none;
+        }
+      }
+
+      button {
+        border: 0;
+        left: auto;
+        outline: none;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        top: 0.3em;
+        bottom: 0.3em;
+        background: transparent;
+        font-size: r(43px);
+      }
+    }
+  }
+
+  &.-open {
+    background: rgba($cBlack, 0.8);
+    visibility: visible;
+    animation: fadein 0.8s;
+    .container {
+      .search-main {
+        input {
+          transform: scale3d(1, 1, 1);
+          transition-duration: 1s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

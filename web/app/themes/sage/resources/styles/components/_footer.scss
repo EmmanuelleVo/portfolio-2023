@@ -1,0 +1,27 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: r(20px);
+  padding: r(25px) r(25px) 0;
+
+  &__nav {
+
+    & .nav__links {
+
+    }
+
+    &-wrapper {
+
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: r(30px);
+  }
+
+  &__copyright {
+    padding: r(25px);
+  }
+}

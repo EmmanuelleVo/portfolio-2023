@@ -1,0 +1,109 @@
+.form {
+  &__label {
+    font-size: r(18px);
+    margin: r(10px) 0;
+    width: 100%;
+  }
+
+  &__input, &__textarea {
+    box-sizing: border-box;
+    background-color: $cWhite;
+    padding: r(10px);
+    font-size: r(18px);
+    border: 1px solid #898989FF;
+    border-radius: 5px;
+    margin: r(10px) 0;
+    transition: border-color .3s ease;
+    width: 100%;
+    &:focus-visible {
+      border-color: $cSecond;
+      transition: border-color .3s ease;
+    }
+  }
+
+  &__input {
+
+  }
+
+  &__textarea {
+    resize: vertical;
+    outline: none;
+  }
+
+  &__error {
+    color: $cRed;
+    display: block;
+    margin-top: r(10px);
+  }
+
+  & .wpcf7-not-valid {
+    border-color: $cMain;
+  }
+
+  & .wpcf7-response-output {
+    display: none;
+  }
+}
+
+
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: r(20px);
+
+  & .sr-only {
+    display: none;
+  }
+
+  & label {
+    font-size: r(18px);
+    margin: r(10px) 0;
+    width: 50%;
+
+    @include mq($until: laptop) {
+      width: 100%;
+    }
+  }
+
+  & input {
+    box-sizing: border-box;
+    background-color: $cWhite;
+    padding: r(10px);
+    font-size: r(18px);
+    border: 1px solid #898989FF;
+    border-radius: 5px;
+    margin: r(10px) 0;
+    transition: border-color .3s ease;
+    width: 100%;
+    &:focus-visible {
+      border-color: $cSecond;
+      transition: border-color .3s ease;
+    }
+  }
+
+  & button {
+    display: inline-flex !important;
+    align-items: center;
+    font: inherit;
+    text-align: center;
+    margin: 0;
+    cursor: pointer;
+    padding: r(10px) r(30px);
+    text-decoration: none;
+    background-color: $cGrey;
+    color: $cWhite !important;
+    border: 1px solid $cGrey;
+    transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+
+    &::before{
+      content: none !important;
+    }
+
+    &:hover {
+      background-color: $cSecond;
+      color: $cGrey !important;
+      border-color: $cSecond;
+      transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+    }
+  }
+}

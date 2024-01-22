@@ -1,0 +1,87 @@
+.lang{
+  &__current {
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-transform: uppercase;
+    color: $cBlack;
+    margin-left: r(10px);
+    padding: r(15px) 0;
+    cursor: pointer;
+
+    & span{
+      display: inline-block;
+      margin-right: r(5px);
+    }
+
+    &--open{
+      & .lang__choice{
+        visibility: visible;
+        opacity: 1;
+        transition: 300ms ease visibility, 300ms ease opacity,
+        300ms ease transform;
+        transform: translateY(0) scaleY(1);
+      }
+    }
+  }
+  &__name{
+    text-transform: uppercase;
+    color: $cWhite;
+  }
+  &__choice{
+    position: absolute;
+    top: 50px;
+    visibility: hidden;
+    opacity: 0;
+    padding: r(10px);
+    background-color: $cBlack;
+    border-radius: r(5px);
+    transform: translateY(r(10px)) scaleY(0.98);
+    z-index: 11;
+    transition: 300ms ease visibility, 300ms ease opacity, 300ms ease transform;
+    &:before {
+      position: absolute;
+      top: r(-4px);
+      margin: 0 auto;
+      z-index: 2;
+      content: "";
+      width: r(8px);
+      height: r(8px);
+      border-radius: r(1px);
+      background-color: $cBlack;
+      transform: rotate(45deg);
+      @include mq($until: laptop) {
+        content: none;
+      }
+    }
+  }
+}
+
+
+/** POLYLANG LANGUAGE SWITCHER **/
+.pll-parent-menu-item {
+  & > a {
+    pointer-events: none;
+    cursor: default;
+  }
+
+  & .sub-menu {
+    width: auto !important;
+    padding: 0 !important;
+    right: 0 !important;
+    left: auto !important;
+    background-color: $cWhite !important;
+    box-shadow: 0 0 5px rgba($cGrey, 0.3);
+
+    &:before {
+      display: none;
+    }
+
+    & .current-lang {
+      & a {
+        color: $cMain;
+        font-weight: 500;
+      }
+    }
+  }
+}

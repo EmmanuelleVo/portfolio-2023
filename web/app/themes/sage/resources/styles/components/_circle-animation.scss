@@ -1,0 +1,106 @@
+.circle {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 70%;
+  list-style: none;
+  z-index: -1;
+  bottom: 0;
+
+  &__animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  &__one {
+    background-color: $cMain;
+    opacity: 0.7;
+    left: 25%;
+    bottom: 20%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 2s;
+  }
+  &__two {
+    background-color: $cSecond;
+    opacity: 0.7;
+    left: 30%;
+    bottom: 20%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 2s;
+  }
+  &__three {
+    background-color: $cMain;
+    opacity: 0.7;
+    left: -5%;
+    width: 200px;
+    height: 200px;
+  }
+  &__four {
+    background-color: $cMain;
+    opacity: 0.7;
+    left: 5%;
+    bottom: 5%;
+    width: 230px;
+    height: 230px;
+  }
+  &__five {
+    background-color: $cSecond;
+    opacity: 0.7;
+    left: 50%;
+    bottom: 50%;
+    width: 50px;
+    height: 50px;
+    animation-delay: 1s;
+  }
+  &__six {
+    background-color: $cSecond;
+    opacity: 0.7;
+    left: 53%;
+    bottom: 50%;
+    width: 75px;
+    height: 75px;
+    animation-delay: 1.5s;
+  }
+  &__seven {
+    background-color: $cWhite;
+    border: $cMain 2px solid;
+    left: 60%;
+    bottom: 40%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 2s;
+  }
+  &__eight {
+    background-color: $cMain;
+    opacity: 0.7;
+    left: 65%;
+    bottom: 40%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 2s;
+  }
+  &__nine {
+    background-color: $cSecond;
+    opacity: 0.7;
+    left: 5%;
+    bottom: 70%;
+    width: 100px;
+    height: 100px;
+  }
+  .circle__ten {
+    background-color: $cMain;
+    opacity: 0.7;
+    left: 10%;
+    bottom: 70%;
+    width: 120px;
+    height: 120px;
+  }
+}

@@ -1,0 +1,11 @@
+.home {
+  &__news {
+    padding: r($paddingBig) 0;
+    @include mq($until: tablet) {
+      padding: r($paddingMedium) 0;
+    }
+    @include mq($until: mobile) {
+      padding: r($paddingSmall) 0;
+    }
+  }
+}
