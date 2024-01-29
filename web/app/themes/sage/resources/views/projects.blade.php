@@ -19,11 +19,9 @@
       <div class="card__container">
         @posts
           @include('partials.project-card')
-        <div class="pagination">
-          {!! posts_nav_link() !!}
-        </div>
         @endposts
       </div>
+      {{--TODO: pagination--}}
       <div class="pagination">
         {!! posts_nav_link(); !!}
       </div>

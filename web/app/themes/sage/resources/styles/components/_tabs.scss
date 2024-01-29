@@ -1,0 +1,56 @@
+.tabs {
+  display: flex;
+  align-items: center;
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: r(50px);
+    width: 50%;
+  }
+
+  & .tab {
+    &__input {
+      display: none;
+
+      & + &__link {
+        background-color: #fff;
+        border-bottom: 1px solid #fff;
+      }
+    }
+
+    &__link {
+      cursor: pointer;
+      padding: r(10px);
+      border: 1px solid $cWhite;
+      border-radius: 50%;
+      margin-bottom: 5px;
+      text-align: center;
+      width: 150px;
+      transition: border 300ms ease, opacity 300ms ease;
+      opacity: .5;
+
+      &:hover {
+        opacity: 1;
+        transition: opacity 300ms ease;
+      }
+
+      &--active {
+        border: 1px solid $cMain;
+        transition: border 300ms ease, opacity 300ms ease;
+        opacity: 1;
+      }
+    }
+
+    &__content {
+      display: none;
+
+      &--active {
+        display: block;
+      }
+      &-container {
+
+      }
+    }
+
+  }
+}

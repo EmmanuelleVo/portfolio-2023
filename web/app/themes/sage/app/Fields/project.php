@@ -35,11 +35,17 @@ $project
         ->addImage('image_5', ['label' => 'Images',])
     ->addTab('Langages utilisés')
         ->addFile('languages_file_1', ['label' => 'Langage utilisé 1', 'required' => 0, 'return_format' => 'array', 'library' => 'all',])
+        ->addText('languages_content_1', ['label' => 'Language Content 1'])
         ->addFile('languages_file_2', ['label' => 'Langage utilisé 1', 'required' => 0, 'return_format' => 'array', 'library' => 'all',])
+        ->addText('languages_content_2', ['label' => 'Language Content 1'])
         ->addFile('languages_file_3', ['label' => 'Langage utilisé 1', 'required' => 0, 'return_format' => 'array', 'library' => 'all',])
+        ->addText('languages_content_3', ['label' => 'Language Content 1'])
         ->addFile('languages_file_4', ['label' => 'Langage utilisé 1', 'required' => 0, 'return_format' => 'array', 'library' => 'all',])
+        ->addText('languages_content_4', ['label' => 'Language Content 1'])
         ->addFile('languages_file_5', ['label' => 'Langage utilisé 1', 'required' => 0, 'return_format' => 'array', 'library' => 'all',])
+        ->addText('languages_content_5', ['label' => 'Language Content 1'])
         ->addFile('languages_file_6', ['label' => 'Langage utilisé 1', 'required' => 0, 'return_format' => 'array', 'library' => 'all',])
+        ->addText('languages_content_6', ['label' => 'Language Content 1'])
 
 ;
 

@@ -1,10 +1,12 @@
 import domReady from '@roots/sage/client/dom-ready';
+import Tab from "@scripts/components/Tab.js";
 
 /**
  * Application entrypoint
  */
 domReady(async () => {
   // ...
+  const tab = new Tab();
 });
 
 /**

@@ -80,13 +80,14 @@ See the [Bedrock installation documentation](https://roots.io/bedrock/docs/insta
 - <code>yarn build:production</code>
 
 # During development :
-- yarn translate:update (poedit)
+- <code>yarn translate:update</code> (poedit)
 
 # Useful packages :
 - Contact form 7
 - Polylang
 - ACF and ACF builder
 - Sage directories
+- Safe SVG
 
 
 
