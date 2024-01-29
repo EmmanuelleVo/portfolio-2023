@@ -88,6 +88,7 @@ See the [Bedrock installation documentation](https://roots.io/bedrock/docs/insta
 - ACF and ACF builder
 - Sage directories
 - Safe SVG
+- WP Mail SMTP
 
 
 

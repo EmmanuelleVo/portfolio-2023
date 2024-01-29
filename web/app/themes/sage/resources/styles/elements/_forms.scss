@@ -43,6 +43,25 @@
   & .wpcf7-response-output {
     display: none;
   }
+
+  &__success {
+    & .wpcf7-response-output {
+      //display: block !important;
+      padding: r(10px) !important;
+      border-radius: 5px;
+      margin: 0 0 r(30px);
+      border: 2px solid $cGreen !important;
+    }
+  }
+
+  & .wpcf7-form.sent p
+  {
+    display:none;
+  }
+
+  & .wpcf7-form.sent .form__success .wpcf7-response-output {
+    display: block !important;
+  }
 }
 
 

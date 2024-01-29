@@ -1,3 +1,35 @@
 .main {
   position: relative;
 }
+
+.wysiwyg {
+  margin-top: 0 !important;
+  line-height: 1.6 !important;
+
+  & {
+    em, b, strong, i {
+      color: $cGrey !important;
+    }
+
+    strong, b {
+      font-weight: 600;
+    }
+
+    em, i {
+      font-style: italic;
+    }
+
+    a {
+      color: $cMain !important;
+      text-decoration: none;
+
+      &::before {
+        background-color: $cMain !important;
+      }
+    }
+
+    blockquote {
+      border-left-color: $cMain;
+    }
+  }
+}

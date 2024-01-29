@@ -1,0 +1,76 @@
+.about {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: r(30px);
+  }
+
+  &__roles {
+    //display: flex;
+    //flex-direction: column;
+    overflow: hidden;
+    height: r(40px); /* Set the desired height */
+    position: relative;
+    margin-bottom: r(30px);
+    & .title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.5s ease-in-out;
+
+      &:nth-child(1) {
+        background-color: $cWhite;
+        color: $cMain;
+        animation: alternateRolesFirst 8s infinite cubic-bezier( 0.19, 1, 0.22, 1 );
+        animation-delay: 2s;
+      }
+      &:nth-child(2) {
+        background-color: $cWhite;
+        color: $cMain;
+        animation: alternateRolesSecond 8s infinite cubic-bezier( 0.19, 1, 0.22, 1 );
+        animation-delay: 2s;
+      }
+    }
+  }
+
+  & .wysiwyg {
+    margin-top: r(20px);
+  }
+
+  &__competences {
+    margin-top: r(30px);
+    &-item {
+      padding-top: r(25px);
+      &:before {
+        content: "";
+        height: 20px;
+        width: 20px;
+        background-color: $cMain;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 1rem;
+        vertical-align: top;
+      }
+    }
+
+  }
+}
+
+@keyframes alternateRolesFirst {
+  0%, 100% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes alternateRolesSecond {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(100%);
+  }
+}
