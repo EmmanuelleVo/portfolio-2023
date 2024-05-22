@@ -3,6 +3,21 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: r(30px);
+
+    @include mq($until: tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__figure {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    @include mq($until: tablet) {
+      height: 450px;
+      background-position-y: 20%;
+    }
   }
 
   &__roles {
@@ -42,35 +57,45 @@
     margin-top: r(30px);
     &-item {
       padding-top: r(25px);
+      display: flex;
       &:before {
         content: "";
         height: 20px;
         width: 20px;
+        min-width: 20px;
         background-color: $cMain;
         border-radius: 50%;
         display: inline-block;
         margin-right: 1rem;
+        margin-top: r(5px);
         vertical-align: top;
+
+        @include mq($until: mobile) {
+          height: 10px;
+          width: 10px;
+          min-width: 10px;
+          margin-top: r(7px);
+        }
       }
     }
 
   }
 }
 
-@keyframes alternateRolesFirst {
-  0%, 100% {
-    transform: translateY(-100%);
-  }
-  50% {
-    transform: translateY(0);
-  }
-}
+// @keyframes alternateRolesFirst {
+//   0%, 100% {
+//     transform: translateY(-100%);
+//   }
+//   50% {
+//     transform: translateY(0);
+//   }
+// }
 
-@keyframes alternateRolesSecond {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(100%);
-  }
-}
+// @keyframes alternateRolesSecond {
+//   0%, 100% {
+//     transform: translateY(0);
+//   }
+//   50% {
+//     transform: translateY(100%);
+//   }
+// }

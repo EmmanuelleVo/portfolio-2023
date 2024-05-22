@@ -1,10 +1,14 @@
 {{-- Template Name: Contact --}}
 
+@php
+    $current_language = pll_current_language();
+@endphp
+
 @extends('layouts.app')
 
 @section('content')
-  <div class="contact">
-    <div class="o-wrapper page__wrapper">
+  <div class="contact page__wrapper">
+    <div class="o-wrapper">
       <div class="contact__wrapper">
 
       <div class="contact__container">
@@ -17,10 +21,10 @@
         </div>
 
         <h1 class="title title--medium">@title</h1>
-        <div class="contact__content">@content</div>
+        <div class="contact__content wysiwyg">@content</div>
         <dl class="contact__info">
           <div class="contact__data">
-            <dt class="contact__mail"><span class="u-visually-hidden"><?= __('Email', 'pf') ?>: </span>
+            <dt class="contact__mail"><span class="u-visually-hidden"><?= __('Email', 'sage') ?>: </span>
               <svg xmlns="http://www.w3.org/2000/svg" width="24.929" height="19.587"
                    viewBox="0 0 24.929 19.587">
                 <title>Mail</title>
@@ -36,7 +40,7 @@
           </div>
           <div class="contact__data">
 
-            <dt class="contact__tel"><span class="u-visually-hidden"><?= __('Numéro de téléphone', 'pf') ?>: </span>
+            <dt class="contact__tel"><span class="u-visually-hidden"><?= __('Numéro de téléphone', 'sage') ?>: </span>
               <svg xmlns="http://www.w3.org/2000/svg" width="24.929" height="24.929"
                    viewBox="0 0 24.929 24.929">
                 <title>Téléphone</title>
@@ -51,7 +55,7 @@
             </dd>
           </div>
           <div class="contact__data">
-            <dt class="contact__linkedin"><span class="u-visually-hidden"><?= __('LinkedIn', 'pf') ?>: </span>
+            <dt class="contact__linkedin"><span class="u-visually-hidden"><?= __('LinkedIn', 'sage') ?>: </span>
               <svg xmlns="http://www.w3.org/2000/svg" width="24.929" height="24.929"
                    viewBox="0 0 24.929 24.929">
                 <title>LinkedIn</title>
@@ -65,7 +69,7 @@
               <a href="https://www.linkedin.com/in/emmanuelle-vo-bb01a3226/?originalSubdomain=be" target="_blank" class="contact__linkedin--link"><?= __('LinkedIn', 'pf') ?></a></dd>
           </div>
           <div class="contact__data">
-            <dt class="contact__github"><span class="u-visually-hidden"><?= __('GitHub', 'pf') ?>: </span>
+            <dt class="contact__github"><span class="u-visually-hidden"><?= __('GitHub', 'sage') ?>: </span>
               <svg xmlns="http://www.w3.org/2000/svg" width="24.929" height="24.306"
                    viewBox="0 0 24.929 24.306">
                 <title>GitHub</title>
@@ -83,7 +87,11 @@
       </div>
 
       <div class="contact__form form">
-        {!! do_shortcode('[contact-form-7 id="9ab61a1" title="Formulaire de contact"]') !!}
+        @if ($current_language == 'en')
+            {!! do_shortcode('[contact-form-7 id="2702b0d" title="Contact Form"]') !!}
+        @elseif ($current_language == 'fr')
+            {!! do_shortcode('[contact-form-7 id="9ab61a1" title="Formulaire de contact"]') !!}
+        @endif
       </div>
       </div>
 

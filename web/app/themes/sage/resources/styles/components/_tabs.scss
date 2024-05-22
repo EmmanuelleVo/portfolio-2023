@@ -3,11 +3,24 @@
   align-items: center;
   gap: r(50px);
 
+  @include mq($until: tablet) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: r(10px);
+  }
+
   &__container {
     display: flex;
     flex-wrap: wrap;
     gap: r(25px);
     width: 50%;
+    min-width: 50%;
+
+    @include mq($until: tablet) {
+      gap: 0;
+      width: 100%;
+      min-width: 100%;
+    }
   }
 
   & .tab {
@@ -28,13 +41,25 @@
       border-radius: 50%;
       background-color: white;
       padding: r(15px);
-      border: 1px solid $cWhite;
+      //border: 1px solid $cWhite;
       width: 150px;
       height: 150px;
       transition: border 300ms ease;
 
+      @include mq($until: tablet) {
+        width: 100px;
+        height: 100px;
+        padding: r(10px);
+      }
+
+      @include mq($until: mobile) {
+        width: 70px;
+        height: 70px;
+        padding: r(7px);
+      }
+
       &--active {
-        border: 1px solid $cMain;
+        //border: 1px solid $cMain;
         transition: border 300ms ease;
       }
     }

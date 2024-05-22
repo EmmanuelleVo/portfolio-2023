@@ -4,10 +4,23 @@
     display: flex;
     justify-content: space-between;
     gap: r(50px);
+
+    @include mq($until: tablet) {
+      flex-direction: column;
+      gap: 0;
+    }
   }
 
   &__content {
     margin: r(50px) 0;
+
+  
+      @include mq($until: tablet) {
+        margin: r(30px) 0;
+        & p {
+          font-size: r(18px);
+      }
+    }
   }
 
   &__info {
@@ -21,6 +34,10 @@
     display: flex;
     align-items: center;
     gap: r(30px);
+
+    & dt {
+      display: flex;
+    }
 
     & a {
       text-decoration: none;
@@ -40,5 +57,9 @@
 
   &__form {
     width: 50%;
+
+    @include mq($until: tablet) {
+      width: 100%;
+    }
   }
 }

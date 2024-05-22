@@ -11,6 +11,12 @@
       color: $cGrey !important;
     }
 
+    li {
+      @include mq($until: mobile) {
+        font-size: r(14px);
+      }
+    }
+
     strong, b {
       font-weight: 600;
     }

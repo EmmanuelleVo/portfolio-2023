@@ -21,7 +21,7 @@
   <section class="project__objectives page__wrapper page__wrapper--colored">
     <div class="o-wrapper">
       <h2 class="title title--white title--small">{{ __('Objectifs', 'sage') }}</h2>
-      <ul class="project__objectives-list">
+      <ul class="project__objectives-list wysiwyg">
         @for($i = 1; $i <= 4; $i++)
           @php($field_name = 'objectives_content_' . $i)
           @hasfield($field_name)
@@ -61,7 +61,7 @@
           @for ($i = 1; $i <= 6; $i++)
             @php($field_name = 'languages_content_' . $i)
             @hasfield($field_name)
-            <div class="tab__content @if($i===1) tab__content--active @endif" id="content{{ $i }}" data-tab="{{ $i }}">
+            <div class="tab__content @if($i===1) tab__content--active @endif wysiwyg" id="content{{ $i }}" data-tab="{{ $i }}">
               <p>@field($field_name) - {{ $i }}</p>
             </div>
             @endfield

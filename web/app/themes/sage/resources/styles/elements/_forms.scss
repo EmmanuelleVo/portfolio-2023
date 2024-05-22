@@ -16,7 +16,8 @@
     transition: border-color .3s ease;
     width: 100%;
     &:focus-visible {
-      border-color: $cSecond;
+      //border-color: $cSecond;
+      outline: solid $cSecond;
       transition: border-color .3s ease;
     }
   }

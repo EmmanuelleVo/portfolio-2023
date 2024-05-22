@@ -36,8 +36,8 @@
   @endwhile--}}
 
   {!! get_the_posts_navigation() !!}
+  @include('partials.banner-contact')
 @endsection
-
 {{--
 @section('sidebar')
   @include('sections.sidebar')
