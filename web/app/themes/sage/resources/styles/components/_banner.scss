@@ -1,0 +1,22 @@
+.banner {  
+    padding-top: r(30px);
+    padding-bottom: r(30px);
+    background-color: $cSecond;
+
+    &__content {
+        display: flex;
+        justify-content: center;
+
+        & p {
+            font-size: r(24px);
+
+            @include mq($until: tablet) {
+                font-size: r(20px);
+            }
+
+            & a {
+                font-weight: 500;
+            }
+        }
+    }
+}

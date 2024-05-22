@@ -25,6 +25,7 @@
     </div>
   </div>
 
+  @include('partials.banner-contact')
 
   {{--@while(have_posts()) @php(the_post())
     --}}{{--@include('partials.page-header')--}}{{--
