@@ -1,5 +1,7 @@
 import domReady from '@roots/sage/client/dom-ready';
 import Tab from "@scripts/components/Tab.js";
+import BurgerMenu from '@scripts/components/BurgerMenu';
+import CirclesAnimation from '@scripts/components/CirclesAnimation';
 
 /**
  * Application entrypoint
@@ -7,6 +9,8 @@ import Tab from "@scripts/components/Tab.js";
 domReady(async() => {
   // ...
     const mainDiv = document.getElementById('js');
+    const burger = new BurgerMenu();
+    const animation = new CirclesAnimation;
 
     if (mainDiv && mainDiv.classList.contains('project')) {
         const tab = new Tab();
