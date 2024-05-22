@@ -17,11 +17,10 @@
       width: 300px; //TODO: minwidth
       height: 100%;
       z-index: 5;
-      visibility: hidden; //TODO: remove
-      /*transform: translateX(100%); TODO: uncomment */
+      transform: translateX(100%);
       opacity: 0; //TODO: 0
       padding: r(30px);
-      transform: translateX(300px);
+      //transform: translateX(300px);
       transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       margin-right: 0;
       box-sizing: border-box;
@@ -46,6 +45,7 @@
     & a {
       text-decoration: none;
       color: $cGrey;
+      white-space: nowrap;
       transition: color 300ms ease;
 
       &:hover {
@@ -55,17 +55,19 @@
     }
   }
 
-  .current-menu-item {
-    &:before {
-      padding: 0 0.5rem;
-      content: "•";
-      font-size: 1rem;
-      color: #ff8983;
-    }
-
-    & a {
-      font-weight: bold;
-    }
+  @include mq($from: laptop) {
+    &:not(.footer__nav) .current-menu-item {
+      &:before {
+        padding: 0 0.5rem;
+        content: "•";
+        font-size: 1rem;
+        color: #ff8983;
+      }
+  
+      & a {
+        font-weight: bold;
+      }
+    } 
   }
 
   &__link, .menu-item {
@@ -241,6 +243,10 @@
   }
 }
 
+
+
+
+/***      MENU OPEN      ***/
 .menu-open {
   overflow-y: hidden;
   & .nav {
@@ -253,8 +259,47 @@
         transform: translateX(0);
         transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         z-index: 5;
-        background-color: $cBlack;
+        background-color: $cGrey;
         z-index: 9999;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+
+    &__links {
+      flex-direction: column;
+      
+      & .menu-item {
+        & a {
+          color: $cWhite;
+        }
+      }
+
+      /***   POLYLANG LANGUAGE SWITCHER   ***/
+      & a[href="#pll_switcher"] {
+        display: none;
+      }
+
+      & .pll-parent-menu-item .sub-menu {
+        visibility: visible;
+        opacity: 1;
+        top: 0;
+        background-color: $cGrey !important;
+        box-shadow: unset;
+        transition: none;
+        transform: none;
+        flex-direction: row;
+        gap: r(10px);
+
+        & .lang-item {
+          color: $cWhite;
+          padding: 0;
+        }
+
+        & .current-lang a {
+          font-weight: 700;
+        }
       }
     }
   }

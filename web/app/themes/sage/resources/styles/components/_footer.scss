@@ -8,7 +8,17 @@
   &__nav {
 
     & .nav__links {
+      flex-wrap: wrap;
+      justify-content: center;
 
+      & .menu-item {
+        width: auto;
+
+        @include mq($until: mobile) {
+          font-size: 1rem;
+          padding: r(10px);
+        }
+      }
     }
 
     &-wrapper {
@@ -21,7 +31,26 @@
     gap: r(30px);
   }
 
+  & .social__container {
+    position: relative;
+
+    &:hover {
+      & svg path {
+        fill: $cMain;
+        transition: fill .2s ease-in-out;
+      }
+    }
+
+    & svg path {
+      transition: fill .2s ease-in-out;
+    }
+  }
+
   &__copyright {
     padding: r(25px);
+    
+    @include mq($until: mobile) {
+      padding: r(10px);
+    }
   }
 }

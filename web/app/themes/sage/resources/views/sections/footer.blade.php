@@ -8,7 +8,7 @@
 
   <div class="footer__social social">
     <div class="social__container">
-      <a href="https://www.linkedin.com/in/emmanuelle-vo-bb01a3226/?originalSubdomain=be" title="{{ __('Voir le LinkedIn d‘Emmanuelle Vo', 'sage') }} target="_blank" class="footer__linkedin footer__logo"><span class="u-visually-hidden"><?= __('Linkedin', 'sage') ?></span></a>
+      <a href="https://www.linkedin.com/in/emmanuelle-vo-bb01a3226/?originalSubdomain=be" title="{{ __('Voir le LinkedIn d‘Emmanuelle Vo', 'sage') }} target="_blank" class="footer__linkedin footer__logo u-absolute"><span class="u-visually-hidden"><?= __('Linkedin', 'sage') ?></span></a>
       <svg xmlns="http://www.w3.org/2000/svg" width="24.929" height="24.929"
            viewBox="0 0 24.929 24.929">
         <title>LinkedIn</title>
@@ -19,7 +19,7 @@
       </svg>
     </div>
     <div class="social__container">
-      <a href="https://github.com/EmmanuelleVo" target="_blank" title="{{ __('Voir le GitHub d‘Emmanuelle Vo', 'sage') }}" class="footer__github footer__logo"><span class="u-visually-hidden"><?= __('GitHub', 'sage') ?></span></a>
+      <a href="https://github.com/EmmanuelleVo" target="_blank" title="{{ __('Voir le GitHub d‘Emmanuelle Vo', 'sage') }}" class="footer__github footer__logo u-absolute"><span class="u-visually-hidden"><?= __('GitHub', 'sage') ?></span></a>
       <svg xmlns="http://www.w3.org/2000/svg" width="24.929" height="24.306"
            viewBox="0 0 24.929 24.306">
         <title>GitHub</title>
@@ -31,7 +31,9 @@
     </div>
   </div>
 
-  <p class="footer__copyright"><?= __('Copyright © - Emmanuelle Vo - 2024.', 'sage') ?></p>
+  <div class="footer__copyright wysiwyg">
+    <p><?= __('Copyright © - Emmanuelle Vo - 2024.', 'sage') ?></p>
+  </div>
 
   {{--@php(dynamic_sidebar('sidebar-footer'))--}}
 </footer>

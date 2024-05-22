@@ -3,7 +3,7 @@
     <div class="">
       <nav class="nav-primary nav o-wrapper" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
         <div class="header__nav-logo">
-          <a href="<?= site_url(); ?>" class="u-absolute" title="{{ __('Home') }}">
+          <a href="{{ pll_home_url()}}" class="u-absolute" title="{{ __('Home') }}">
             <span class="u-visually-hidden">{{ __('Home') }}</span>
           </a>
           <svg xmlns="http://www.w3.org/2000/svg" width="70" height="75" viewBox="0 0 117.478 76.797">
@@ -19,7 +19,13 @@
           </svg>
         </div>
         <div class="nav__wrapper">
-          {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav__links', 'echo' => false]) !!}
+          <button class="hamburger hamburger--collapse" type="button">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>  
+
+          {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav__links', 'container_class' => 'nav__links-container', 'echo' => false]) !!}
           {{--<form id="language-switcher" action="{{ home_url('/') }}" method="get">
             @php
               $current_lang = get_locale();
@@ -66,6 +72,7 @@
 
   @if(is_front_page())
       <div class="header--home">
+        <canvas id="canvas" class="canvas"></canvas>
         <div class="header__intro">
           <h2 class="title title--big header__title">
             <span class="header__title--name">Emmanuelle Vo,</span>

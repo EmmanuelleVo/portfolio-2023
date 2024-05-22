@@ -3,8 +3,8 @@
     $contact_url = ($current_language == 'fr') ? '/contact' : '/en/contact-me';
 @endphp
 
-<div class="banner o-wrapper">
-    <div class="banner__content wysiwyg">
+<div class="banner">
+    <div class="banner__content o-wrapper wysiwyg">
         <p>
             <?php
                 echo sprintf(
