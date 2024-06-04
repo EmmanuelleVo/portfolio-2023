@@ -15,6 +15,7 @@ export default class BurgerMenu {
             this.menuContainer.classList.toggle('is-active');
             this.menuContainer.classList.toggle('menu-open');
             this.menu.classList.toggle('is-active');
+            this.hamburger.classList.toggle('is-active')
         });
     }
 
@@ -28,6 +29,7 @@ export default class BurgerMenu {
                 this.menuContainer.classList.remove('is-active');
                 this.menuContainer.classList.remove('menu-open');
                 this.menu.classList.remove('is-active');
+                this.hamburger.classList.remove('is-active')
                 this.isOpen = false; // Update menu state
             }
         });

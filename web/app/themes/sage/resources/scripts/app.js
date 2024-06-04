@@ -8,9 +8,12 @@ import CirclesAnimation from '@scripts/components/CirclesAnimation';
  */
 domReady(async() => {
   // ...
-    const mainDiv = document.getElementById('js');
-    const burger = new BurgerMenu();
-    const animation = new CirclesAnimation;
+  const mainDiv = document.getElementById('js');
+  const canvas = document.getElementById('canvas');
+  const burger = new BurgerMenu();
+    if(canvas) {
+        const animation = new CirclesAnimation;
+    }
 
     if (mainDiv && mainDiv.classList.contains('project')) {
         const tab = new Tab();

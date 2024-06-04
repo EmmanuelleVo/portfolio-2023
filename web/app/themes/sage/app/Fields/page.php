@@ -30,5 +30,14 @@ $page
         ->addText('competence_2', ['label' => 'Compétence 2'])
         ->addText('competence_3', ['label' => 'Compétence 3'])
 ;
+$page
+    ->addTab('Données générales')
+        ->addTrueFalse('general_data')
+        ->addText('data_job_1', ['label' => 'Job'])
+        ->addText('data_job_2', ['label' => 'Job 2'])
+        ->addText('data_email', ['label' => 'Email'])
+        ->addText('data_phone', ['label' => 'Numéro de téléphone'])
+        ->addWysiwyg('data_content', ['label' => 'Contenu'])
+;
 
 return $page;

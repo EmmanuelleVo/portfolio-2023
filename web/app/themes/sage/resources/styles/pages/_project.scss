@@ -15,9 +15,13 @@
     grid-template-columns: repeat(2, 1fr);
     gap: r(30px);
 
-  @include mq($until: tablet) {
-    grid-template-columns: 1fr;
-  }
+    @include mq($until: tablet) {
+      grid-template-columns: 1fr;
+    }
+
+    & .c-btn {
+      margin-top: r(15px);
+    }
   }
 
   &__objectives {
@@ -61,5 +65,37 @@
     }
   }
 
+  &__languages {
+    &  .o-wrapper {
+      @include mq($from: laptop) {
+        max-width: r(800px);
+      }
+    }
+    & .title {
+      text-align: center;
+    }
+  }
+
+  &__actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: r(30px);
+    @include mq($until: tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: r(15px);
+    }
+
+    & .c-btn {
+      justify-content: center;
+    }
+
+    & .archive {
+      grid-column-start: 2;
+      @include mq($until: tablet) {
+        grid-column: 1/-1;
+        grid-row-start: 2;
+      }
+    }
+  }
 
 }

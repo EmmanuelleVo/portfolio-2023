@@ -5,13 +5,14 @@
 
   @include mq($until: tablet) {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: r(10px);
   }
 
   &__container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: r(25px);
     width: 50%;
     min-width: 50%;
@@ -45,6 +46,12 @@
       width: 150px;
       height: 150px;
       transition: border 300ms ease;
+
+      @include mq($until: 820px) {
+        width: 120px;
+        height: 120px;
+        padding: r(10px);
+      }
 
       @include mq($until: tablet) {
         width: 100px;
@@ -88,6 +95,8 @@
 
     &__content {
       display: none;
+      max-width: r(600px);
+      text-align: center;
 
       &--active {
         display: block;

@@ -70,6 +70,11 @@
     </div>
   @endif
 
+  @php
+    $current_language = pll_current_language();
+    $about_url = ($current_language == 'fr') ? '/a-propos' : '/en/about';
+  @endphp
+
   @if(is_front_page())
       <div class="header--home">
         <canvas id="canvas" class="canvas"></canvas>
@@ -78,9 +83,9 @@
             <span class="header__title--name">Emmanuelle Vo,</span>
             <span class="header__title--job">Web Designer</span>
           </h2>
-          <a class="c-btn c-btn--primary" href="{{ home_url('/') }}">
+          <a class="c-btn c-btn--primary c-btn--animate" href="{{ $about_url }}">
             {{--{!! $siteName !!}--}}
-            {{ __('En savoir plus') }}
+            <span>{{ __('En savoir plus', 'sage') }}</span>
           </a>
         </div>
       </div>

@@ -1,4 +1,7 @@
 .contact {
+  &.page__wrapper {
+    margin-bottom: r(30px);
+  }
 
   &__wrapper {
     display: flex;

@@ -46,6 +46,9 @@
     @include mq($until: mobile) {
       height: 250px;
     }
+    @include mq($until: 535px) {
+      height: 300px;
+    }
 
     &::before{
       content: '';

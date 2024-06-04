@@ -15,7 +15,9 @@
     <div class="o-wrapper">
       <div class="title__container">
         <h2 class="title title--small title--white">{{ __('Mes projets') }}</h2>
-        <a href="{{ get_post_type_archive_link('project') }}" class="c-btn c-btn--secondary">{{ __('Voir tous mes projets', 'sage') }}</a>
+        <a href="{{ get_post_type_archive_link('project') }}" class="c-btn c-btn--secondary c-btn--animate">
+          <span>{{ __('Voir tous mes projets', 'sage') }}</span>
+        </a>
       </div>
       <div class="card__container">
         @posts

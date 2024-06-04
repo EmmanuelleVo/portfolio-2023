@@ -1,4 +1,4 @@
-<article id="js" class="project">
+<article id="js" class="project page__wrapper">
   <div class="o-wrapper">
     <h1 class="project__title title title--medium">@title</h1>
     <span class="project__date"><time datetime="{{ date('c', strtotime(get_field('date', false, false))) }}">@field('date')</time></span>
@@ -11,8 +11,8 @@
           @field('content')
         </div>
         @hasfield('url')
-        <a href="@field('url')" title="{{ __('Voir le site du projet', 'sage') }}"
-           class="c-btn c-btn--primary">{{ __('Voir le site du projet', 'sage') }}</a>
+        <a target="blank" href="@field('url')" title="{{ __('Voir le site du projet', 'sage') }}"
+           class="c-btn c-btn--primary c-btn--animate"><span>{{ __('Voir le site du projet', 'sage') }}</span></a>
         @endfield
       </div>
     </div>
@@ -62,7 +62,7 @@
             @php($field_name = 'languages_content_' . $i)
             @hasfield($field_name)
             <div class="tab__content @if($i===1) tab__content--active @endif wysiwyg" id="content{{ $i }}" data-tab="{{ $i }}">
-              <p>@field($field_name) - {{ $i }}</p>
+              <p>@field($field_name)</p>
             </div>
             @endfield
           @endfor
@@ -74,18 +74,25 @@
 
   {{--TODO:Add images (iphone mockup) + languages used--}}
 
+  <div class="project__actions actions o-wrapper">
+    @php($prev_post = get_previous_post())
+    @if($prev_post)
+      <a href="{{ get_permalink($prev_post->ID)}}" class="c-btn c-btn--primary c-btn--animate" title="{{ __('Voir le projet précédent', 'sage')}}">
+        <span>{{ __('Projet précédent', 'sage')}}</span>
+      </a>
+    @endif
 
-    {{--$prev_post = get_previous_post();
-if($prev_post) {
-$prev_title = strip_tags(str_replace('"', '', $prev_post->post_title));
-echo "\t" . '<a rel="prev" href="' . get_permalink($prev_post->ID) . '" title="' . $prev_title. '" class=" ">&laquo; Previous post<br /><strong>&quot;'. $prev_title . '&quot;</strong></a>' . "\n";
-}
+    <a href="{{ get_post_type_archive_link('project') }}" class="c-btn c-btn--primary c-btn--animate archive" title="{{ __('Voir tous les projets', 'sage') }}">
+      <span>{{ __('Voir tous les projets', 'sage') }}</span>
+    </a>
 
-$next_post = get_next_post();
-if($next_post) {
-$next_title = strip_tags(str_replace('"', '', $next_post->post_title));
-echo "\t" . '<a rel="next" href="' . get_permalink($next_post->ID) . '" title="' . $next_title. '" class=" ">Next post &raquo;<br /><strong>&quot;'. $next_title . '&quot;</strong></a>' . "\n";
-}--}}
+    @php($next_post = get_next_post())
+    @if($next_post)
+      <a href="{{ get_permalink($next_post->ID)}}" class="c-btn c-btn--primary c-btn--animate" title="{{ __('Voir le projet suivant', 'sage')}}">
+        <span>{{ __('Projet suivant', 'sage')}}</span>  
+      </a>
+    @endif
+  </div>
 
 
   {{--<div class="project__actions o-wrapper">
@@ -95,9 +102,5 @@ echo "\t" . '<a rel="next" href="' . get_permalink($next_post->ID) . '" title="'
          class="c-btn c-btn--secondary"><?= __('Voir tous les projets', 'sage') ?></a>
   </div>--}}
 
-
-  {{--<footer>
-    {!! wp_link_pages(['echo' => 0, 'before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']) !!}
-  </footer>--}}
 
 </article>
