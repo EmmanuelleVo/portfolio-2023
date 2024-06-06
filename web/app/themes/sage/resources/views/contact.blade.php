@@ -66,7 +66,7 @@
               </svg>
             </dt>
             <dd class="contact__linkedin--definition">
-              <a href="https://www.linkedin.com/in/emmanuelle-vo-bb01a3226/?originalSubdomain=be" target="_blank" class="contact__linkedin--link"><?= __('LinkedIn', 'pf') ?></a></dd>
+              <a href="https://www.linkedin.com/in/emmanuelle-vo-bb01a3226/?originalSubdomain=be" target="_blank" class="contact__linkedin--link"><?= __('LinkedIn', 'sage') ?></a></dd>
           </div>
           <div class="contact__data">
             <dt class="contact__github"><span class="u-visually-hidden"><?= __('GitHub', 'sage') ?>: </span>
@@ -80,7 +80,7 @@
               </svg>
             </dt>
             <dd class="contact__github--definition">
-              <a href="https://github.com/EmmanuelleVo" target="_blank" class="contact__github--link"><?= __('GitHub', 'pf') ?></a>
+              <a href="https://github.com/EmmanuelleVo" target="_blank" class="contact__github--link"><?= __('GitHub', 'sage') ?></a>
             </dd>
           </div>
         </dl>

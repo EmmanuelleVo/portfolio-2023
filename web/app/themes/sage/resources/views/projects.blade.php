@@ -15,7 +15,7 @@
 
   <div class="page__wrapper">
     <div class="o-wrapper">
-      <h2 class="title title--medium">{{ __('Mes projets') }}</h2>
+      <h2 class="title title--medium">{{ __('Mes projets', 'sage') }}</h2>
       <div class="card__container">
         @posts
           @include('partials.project-card')

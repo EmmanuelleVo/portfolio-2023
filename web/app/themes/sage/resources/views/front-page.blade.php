@@ -14,7 +14,7 @@
   <div class="page__wrapper page__wrapper--colored">
     <div class="o-wrapper">
       <div class="title__container">
-        <h2 class="title title--small title--white">{{ __('Mes projets') }}</h2>
+        <h2 class="title title--small title--white">{{ __('Mes projets', 'sage') }}</h2>
         <a href="{{ get_post_type_archive_link('project') }}" class="c-btn c-btn--secondary c-btn--animate">
           <span>{{ __('Voir tous mes projets', 'sage') }}</span>
         </a>

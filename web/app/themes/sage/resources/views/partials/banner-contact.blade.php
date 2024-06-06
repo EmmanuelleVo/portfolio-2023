@@ -8,7 +8,8 @@
         <p>
             <?php
                 echo sprintf(
-                    __('N\'hésitez pas à me <a href="%s" title="contact" class="%s">contacter</a>.', 'sage'),
+                    /* translators: 1: URL, 2: CSS class */
+                    __('Démarrons un projet ensemble, n\'hésitez pas à me <a href="%1$s" title="contact" class="%2$s">contacter</a>.', 'sage'),
                     esc_url($contact_url),
                     esc_attr('banner__link')
                 );

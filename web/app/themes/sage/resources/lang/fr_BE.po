@@ -1,259 +1,264 @@
 # Copyright (C) 2024 Roots
 # This file is distributed under the MIT License.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Portfolio2023 10.6.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/sage\n"
 "POT-Creation-Date: 2024-06-06 17:18+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2024-06-06 17:23+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_BE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.4.2\n"
 "X-Domain: sage\n"
 
 #. Theme Name of the theme
 msgid "Portfolio2023"
-msgstr ""
+msgstr "Portfolio2023"
 
 #. Theme URI of the theme
 msgid "https://roots.io/sage/"
-msgstr ""
+msgstr "https://roots.io/sage/"
 
 #. Description of the theme
 msgid "Sage is a WordPress starter theme."
-msgstr ""
+msgstr "Sage is a WordPress starter theme."
 
 #. Author of the theme
 msgid "Roots"
-msgstr ""
+msgstr "Roots"
 
 #. Author URI of the theme
 msgid "https://roots.io/"
-msgstr ""
+msgstr "https://roots.io/"
 
 #: app/filters.php:15
 msgid "Continued"
-msgstr ""
+msgstr "Continued"
 
 #: app/setup.php:61
 msgid "Primary Navigation"
-msgstr ""
+msgstr "Primary Navigation"
 
 #: app/setup.php:62
 msgid "Secondary Navigation"
-msgstr ""
+msgstr "Secondary Navigation"
 
 #: app/setup.php:130
 msgid "Primary"
-msgstr ""
+msgstr "Primary"
 
 #: app/setup.php:135
 msgid "Footer"
-msgstr ""
+msgstr "Footer"
 
 #: app/View/Composers/Post.php:48
 msgid "Latest Posts"
-msgstr ""
+msgstr "Articles les plus récents"
 
 #. translators: %s is replaced with the search query
 #: app/View/Composers/Post.php:58
 msgid "Search Results for %s"
-msgstr ""
+msgstr "Résultats de recherche pour %s"
 
 #: app/View/Composers/Post.php:64
 msgid "Not Found"
-msgstr ""
+msgstr "Not Found"
 
 #: resources/views/contact.blade.php:27
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: resources/views/contact.blade.php:43
 msgid "Numéro de téléphone"
-msgstr ""
+msgstr "Numéro de téléphone"
 
 #: resources/views/contact.blade.php:58 resources/views/contact.blade.php:69
 msgid "LinkedIn"
-msgstr ""
+msgstr "LinkedIn"
 
 #: resources/views/contact.blade.php:72 resources/views/contact.blade.php:83
 #: resources/views/sections/footer.blade.php:22
 #: resources/views/sections/footer.blade.php:23
 msgid "GitHub"
-msgstr ""
+msgstr "GitHub"
 
 #. translators: 1: URL, 2: CSS class
 #: resources/views/partials/banner-contact.blade.php:12
-msgid "Démarrons un projet ensemble, n'hésitez pas à me <a href=\"%1$s\" title=\"contact\" class=\"%2$s\">contacter</a>."
+msgid ""
+"Démarrons un projet ensemble, n'hésitez pas à me <a href=\"%1$s\" "
+"title=\"contact\" class=\"%2$s\">contacter</a>."
 msgstr ""
+"Démarrons un projet ensemble, n’hésitez pas à me <a href=\"%1$s\" "
+"title=\"contact\" class=\"%2$s\">contacter</a>."
 
 #: resources/views/partials/content-single.blade.php:98
 #: resources/views/partials/content-single.blade.php:99
 msgid "Précédent"
-msgstr ""
+msgstr "Précédent"
 
 #: resources/views/partials/content-single.blade.php:99
 #: resources/views/partials/content-single.blade.php:100
 msgid "Suivant"
-msgstr ""
+msgstr "Suivant"
 
 #: resources/views/partials/content-single.blade.php:101
 #: resources/views/partials/content-single.blade.php:85
 #: resources/views/partials/content-single.blade.php:86
 #: resources/views/partials/content-single.blade.php:102
 msgid "Voir tous les projets"
-msgstr ""
+msgstr "Voir tous les projets"
 
 #: resources/views/sections/footer.blade.php:11
 #: resources/views/sections/footer.blade.php:12
 msgid "Linkedin"
-msgstr ""
+msgstr "Linkedin"
 
 #: resources/views/sections/footer.blade.php:35
 #: resources/views/sections/footer.blade.php:36
 msgid "Copyright © - Emmanuelle Vo - 2024."
-msgstr ""
+msgstr "Copyright © - Emmanuelle Vo - 2024."
 
 #: resources/views/sections/header.blade.php:46
 #: resources/views/sections/header.blade.php:48
 msgid "Changer la langue"
-msgstr ""
+msgstr "Changer la langue"
 
 #: resources/views/sections/header.blade.php:50
 #: resources/views/sections/header.blade.php:52
 msgid "Le site est actuellement en"
-msgstr ""
+msgstr "Le site est actuellement en"
 
 #. Template Name of the theme
 msgid "Custom Template"
-msgstr ""
+msgstr "Custom Template"
 
 #: resources/views/404.blade.php:10
 msgid "Désolé, mais la page que vous essayez de consulter n‘existe pas."
-msgstr ""
+msgstr "Désolé, mais la page que vous essayez de consulter n‘existe pas."
 
 #: resources/views/forms/search.blade.php:4
 msgctxt "label"
 msgid "Search for:"
-msgstr ""
+msgstr "Ma recherche:"
 
 #: resources/views/forms/search.blade.php:10
 msgctxt "placeholder"
 msgid "Search &hellip;"
-msgstr ""
+msgstr "Rechercher &hellip;"
 
 #: resources/views/forms/search.blade.php:16
 msgctxt "submit button"
 msgid "Search"
-msgstr ""
+msgstr "Rechercher"
 
 #: resources/views/front-page.blade.php:17 resources/views/index.blade.php:27
 #: resources/views/projects.blade.php:18
 msgid "Mes projets"
-msgstr ""
+msgstr "Mes projets"
 
 #: resources/views/front-page.blade.php:19
 msgid "Voir tous mes projets"
-msgstr ""
+msgstr "Voir tous mes projets"
 
 #: resources/views/layouts/app.blade.php:3
 #: resources/views/layouts/app.blade.php:4
 msgid "Passer au contenu principal"
-msgstr ""
+msgstr "Passer au contenu principal"
 
 #: resources/views/page-about.blade.php:28
 msgid "Mes compétences"
-msgstr ""
+msgstr "Mes compétences"
 
 #. translators: %1$s is replaced with the number of comments and %2$s with the post title
 #: resources/views/partials/comments.blade.php:5
 msgctxt "comments title"
 msgid "%1$s response to &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s responses to &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1$s response to &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s responses to &ldquo;%2$s&rdquo;"
 
 #. translators: %1$s is replaced with the number of comments and %2$s with the post title
 #: resources/views/partials/comments.blade.php:5
 msgctxt "comments title"
 msgid "One"
-msgstr ""
+msgstr "One"
 
 #: resources/views/partials/comments.blade.php:19
 msgid "&larr; Older comments"
-msgstr ""
+msgstr "&larr; Older comments"
 
 #: resources/views/partials/comments.blade.php:26
 msgid "Newer comments &rarr;"
-msgstr ""
+msgstr "Newer comments &rarr;"
 
 #: resources/views/partials/comments.blade.php:37
 msgid "Comments are closed."
-msgstr ""
+msgstr "Comments are closed."
 
 #: resources/views/partials/content-page.blade.php:3
 msgid "Pages:"
-msgstr ""
+msgstr "Pages:"
 
 #: resources/views/partials/content-search.blade.php:25
 #: resources/views/partials/project-card.blade.php:8
 msgid "En savoir plus sur"
-msgstr ""
+msgstr "En savoir plus sur"
 
 #: resources/views/partials/content-single.blade.php:14
 #: resources/views/partials/content-single.blade.php:15
 msgid "Voir le site du projet"
-msgstr ""
+msgstr "Voir le site du projet"
 
 #: resources/views/partials/content-single.blade.php:23
 msgid "Objectifs"
-msgstr ""
+msgstr "Objectifs"
 
 #: resources/views/partials/content-single.blade.php:44
 msgid "Langages utilisés"
-msgstr ""
+msgstr "Langages utilisés"
 
 #: resources/views/partials/content-single.blade.php:80
 msgid "Voir le projet précédent"
-msgstr ""
+msgstr "Voir le projet précédent"
 
 #: resources/views/partials/content-single.blade.php:81
 msgid "Projet précédent"
-msgstr ""
+msgstr "Projet précédent"
 
 #: resources/views/partials/content-single.blade.php:91
 msgid "Voir le projet suivant"
-msgstr ""
+msgstr "Voir le projet suivant"
 
 #: resources/views/partials/content-single.blade.php:92
 msgid "Projet suivant"
-msgstr ""
+msgstr "Projet suivant"
 
 #: resources/views/partials/entry-meta.blade.php:7
 msgid "By"
-msgstr ""
+msgstr "By"
 
 #: resources/views/search.blade.php:12
 msgid "Désolé, aucun résultat n‘a été trouvé."
-msgstr ""
+msgstr "Désolé, aucun résultat n‘a été trouvé."
 
 #: resources/views/sections/footer.blade.php:12
 msgid "Voir le LinkedIn d‘Emmanuelle Vo"
-msgstr ""
+msgstr "Voir le LinkedIn d‘Emmanuelle Vo"
 
 #: resources/views/sections/footer.blade.php:23
 msgid "Voir le GitHub d‘Emmanuelle Vo"
-msgstr ""
+msgstr "Voir le GitHub d‘Emmanuelle Vo"
 
 #: resources/views/sections/header.blade.php:6
 #: resources/views/sections/header.blade.php:7
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #: resources/views/sections/header.blade.php:90
 msgid "En savoir plus"
-msgstr ""
+msgstr "En savoir plus"

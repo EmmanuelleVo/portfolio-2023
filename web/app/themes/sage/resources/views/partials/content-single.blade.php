@@ -32,11 +32,12 @@
     </div>
   </section>
 
-  <section class="project__images">
+  {{--TODO:Add images (iphone mockup)--}}
+  {{-- <section class="project__images">
     <div class="o-wrapper">
       <h2 class="title u-visually-hidden">{{ __('Images du projet', 'sage') }}</h2>
     </div>
-  </section>
+  </section> --}}
 
   <section class="project__languages page__wrapper">
     <div class="o-wrapper">
@@ -71,8 +72,6 @@
       </div>
     </div>
   </section>
-
-  {{--TODO:Add images (iphone mockup) + languages used--}}
 
   <div class="project__actions actions o-wrapper">
     @php($prev_post = get_previous_post())

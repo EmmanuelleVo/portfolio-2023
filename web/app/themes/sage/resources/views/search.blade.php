@@ -9,7 +9,7 @@
   
     @if (! have_posts())
       <x-alert type="warning">
-        {!! __('Sorry, no results were found.', 'sage') !!}
+        {!! __('Désolé, aucun résultat n‘a été trouvé.', 'sage') !!}
       </x-alert>
   
       {!! get_search_form(false) !!}

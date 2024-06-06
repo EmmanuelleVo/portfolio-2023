@@ -3,8 +3,8 @@
     <div class="">
       <nav class="nav-primary nav o-wrapper" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
         <div class="header__nav-logo">
-          <a href="{{ pll_home_url()}}" class="u-absolute" title="{{ __('Home') }}">
-            <span class="u-visually-hidden">{{ __('Home') }}</span>
+          <a href="{{ pll_home_url()}}" class="u-absolute" title="{{ __('Home', 'sage') }}">
+            <span class="u-visually-hidden">{{ __('Home', 'sage') }}</span>
           </a>
           <svg xmlns="http://www.w3.org/2000/svg" width="70" height="75" viewBox="0 0 117.478 76.797">
             <g id="Groupe_22" data-name="Groupe 22" transform="translate(-231.522 -32.203)">
@@ -43,11 +43,11 @@
           </form>--}}
 
           {{--<div class="menu__lang lang">
-            <h2 class="u-visually-hidden"><?= __('Changer la langue', 'pf'); ?></h2>
+            <h2 class="u-visually-hidden"><?= __('Changer la langue', 'sage'); ?></h2>
               <?php foreach (pll_the_languages(['raw' => true]) as $code => $locale): ?>
             <div class="lang__container">
                 <?php if ($locale['current_lang']): ?>
-              <p class="u-visually-hidden"><?= __('Le site est actuellement en', 'pf'); ?> <?= $locale['name'] ?></p>
+              <p class="u-visually-hidden"><?= __('Le site est actuellement en', 'sage'); ?> <?= $locale['name'] ?></p>
               <a href="/" class="lang__current"><?= strtoupper($code) ?><span
                   class="arrow-down arrow-js"></span></a>
               <?php endif; ?>
@@ -80,8 +80,12 @@
         <canvas id="canvas" class="canvas"></canvas>
         <div class="header__intro">
           <h2 class="title title--big header__title">
+            @while(have_posts()) @php(the_post())
+            @if(get_field('general_data') === true)
             <span class="header__title--name">Emmanuelle Vo,</span>
-            <span class="header__title--job">Web Designer</span>
+            <span class="header__title--job">@field('data_job_1')</span>
+            @endif
+            @endwhile
           </h2>
           <a class="c-btn c-btn--primary c-btn--animate" href="{{ $about_url }}">
             {{--{!! $siteName !!}--}}

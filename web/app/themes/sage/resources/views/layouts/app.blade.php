@@ -1,7 +1,7 @@
 {{-- Is wrapped by index.php in /root/ --}}
 
-<a class="u-visually-hidden" href="#main" title="{{ __('Skip to content') }}">
-  {{ __('Skip to content') }}
+<a class="u-visually-hidden" href="#main" title="{{ __('Passer au contenu principal', 'sage') }}">
+  {{ __('Passer au contenu principal', 'sage') }}
 </a>
 
 @include('sections.header')
