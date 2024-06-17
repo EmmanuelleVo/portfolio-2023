@@ -10,9 +10,7 @@
   <div class="contact page__wrapper">
     <div class="o-wrapper">
       <div class="contact__wrapper">
-
       <div class="contact__container">
-
         <div class="circle__animation">
           {{--<div class="circle__one circle"></div>
           <div class="circle__two circle"></div>--}}
@@ -20,9 +18,9 @@
           <div class="circle__four circle"></div>
         </div>
 
-        <h1 class="title title--medium">@title</h1>
-        <div class="contact__content wysiwyg">@content</div>
-        <dl class="contact__info">
+        <h1 class="title title--medium" data-aos="fade-up">@title</h1>
+        <div class="contact__content wysiwyg" data-aos="fade-up">@content</div>
+        <dl class="contact__info" data-aos="fade-up">
           <div class="contact__data">
             <dt class="contact__mail"><span class="u-visually-hidden"><?= __('Email', 'sage') ?>: </span>
               <svg xmlns="http://www.w3.org/2000/svg" width="24.929" height="19.587"
@@ -86,7 +84,7 @@
         </dl>
       </div>
 
-      <div class="contact__form form">
+      <div class="contact__form form" data-aos="fade-up" data-aos-delay="200">
         @if ($current_language == 'en')
             {!! do_shortcode('[contact-form-7 id="2702b0d" title="Contact Form"]') !!}
         @elseif ($current_language == 'fr')

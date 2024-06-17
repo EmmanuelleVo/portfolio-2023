@@ -23,9 +23,14 @@
     "@roots/bud-postcss": "6.12.2",
     "@roots/bud-sass": "6.12.2",
     "@roots/bud-tailwindcss": "6.12.2",
-    "@roots/sage": "6.12.2"
+    "@roots/sage": "6.12.2",
+    "css-loader": "^7.1.2",
+    "node-sass": "^9.0.0",
+    "sass-loader": "^14.2.1",
+    "style-loader": "^4.0.0"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "caniuse-lite": "^1.0.30001524",
     "hamburgers": "^1.2.1",
     "sass-mq": "^6.0.0"

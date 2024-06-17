@@ -1,4 +1,4 @@
-<article class="card">
+<article class="card" data-aos="fade-up" data-aos-delay="{{ $delay }}">
   <div class="card__figure-container">
     <figure class="card__figure">
       <img src="@field('main_image', 'url')" alt="" class="card__img">

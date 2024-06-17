@@ -1,13 +1,13 @@
 <article id="js" class="project page__wrapper">
   <div class="o-wrapper">
-    <h1 class="project__title title title--medium">@title</h1>
-    <span class="project__date"><time datetime="{{ date('c', strtotime(get_field('date', false, false))) }}">@field('date')</time></span>
+    <h1 class="project__title title title--medium" data-aos="fade-up">@title</h1>
+    <span class="project__date" data-aos="fade-up" data-aos-delay="200"><time datetime="{{ date('c', strtotime(get_field('date', false, false))) }}">@field('date')</time></span>
     <div class="project__container">
-      <figure class="project__figure-container">
+      <figure class="project__figure-container" data-aos="fade-up" data-aos-delay="400">
         <img src="@field('main_image', 'url')" alt="" class="project__figure">
       </figure>
       <div class="">
-        <div class="project__content wysiwyg">
+        <div class="project__content wysiwyg" data-aos="fade-up" data-aos-delay="600">
           @field('content')
         </div>
         @hasfield('url')
@@ -20,15 +20,17 @@
 
   <section class="project__objectives page__wrapper page__wrapper--colored">
     <div class="o-wrapper">
-      <h2 class="title title--white title--small">{{ __('Objectifs', 'sage') }}</h2>
+      <h2 class="title title--white title--small" data-aos="fade-up">{{ __('Objectifs', 'sage') }}</h2>
       <ul class="project__objectives-list wysiwyg">
+        @php($delay = 200)
         @for($i = 1; $i <= 4; $i++)
-          @php($field_name = 'objectives_content_' . $i)
-          @hasfield($field_name)
-          <li class="project__objectives-item">@field($field_name)</li>
-          @endfield
+            @php($field_name = 'objectives_content_' . $i)
+            @php($delay += 200)
+            @hasfield($field_name)
+                <li class="project__objectives-item" data-aos="fade-up" data-aos-delay="{{ $delay }}">{{ get_field($field_name) }}</li>
+            @endfield
         @endfor
-      </ul>
+    </ul>
     </div>
   </section>
 
@@ -41,9 +43,9 @@
 
   <section class="project__languages page__wrapper">
     <div class="o-wrapper">
-      <h2 class="title title--small">{{ __('Langages utilisés', 'sage') }}</h2>
+      <h2 class="title title--small" data-aos="fade-up">{{ __('Langages utilisés', 'sage') }}</h2>
       <div class="tabs">
-        <div class="tabs__container">
+        <div class="tabs__container" data-aos="fade-up" data-aos-delay="200">
           @for ($i = 1; $i <= 6; $i++)
             @php($field_name = 'languages_file_' . $i)
             @hasfield($field_name)
@@ -58,7 +60,7 @@
           @endfor
         </div>
 
-        <div class="tab__content-container">
+        <div class="tab__content-container" data-aos="fade-up" data-aos-delay="400">
           @for ($i = 1; $i <= 6; $i++)
             @php($field_name = 'languages_content_' . $i)
             @hasfield($field_name)
@@ -73,7 +75,7 @@
     </div>
   </section>
 
-  <div class="project__actions actions o-wrapper">
+  <div class="project__actions actions o-wrapper" data-aos="fade-up">
     @php($prev_post = get_previous_post())
     @if($prev_post)
       <a href="{{ get_permalink($prev_post->ID)}}" class="c-btn c-btn--primary c-btn--animate" title="{{ __('Voir le projet précédent', 'sage')}}">

@@ -4,7 +4,7 @@
 @endphp
 
 <div class="banner">
-    <div class="banner__content o-wrapper wysiwyg">
+    <div class="banner__content o-wrapper wysiwyg" data-aos="fade-up">
         <p>
             <?php
                 echo sprintf(

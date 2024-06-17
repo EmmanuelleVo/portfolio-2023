@@ -1,6 +1,6 @@
 <header class="header">
   @if (has_nav_menu('primary_navigation'))
-    <div class="">
+    <div class="header__nav">
       <nav class="nav-primary nav o-wrapper" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
         <div class="header__nav-logo">
           <a href="{{ pll_home_url()}}" class="u-absolute" title="{{ __('Home', 'sage') }}">
@@ -25,7 +25,13 @@
             </span>
           </button>  
 
-          {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav__links', 'container_class' => 'nav__links-container', 'echo' => false]) !!}
+          {!! wp_nav_menu([
+            'theme_location' => 'primary_navigation', 
+            'menu_class' => 'nav__links', 
+            'container_class' => 'nav__links-container', 
+            'echo' => false,
+            //'walker' => new \App\NavMenuWalker()
+            ]) !!}
           {{--<form id="language-switcher" action="{{ home_url('/') }}" method="get">
             @php
               $current_lang = get_locale();
@@ -78,7 +84,7 @@
   @if(is_front_page())
       <div class="header--home">
         <canvas id="canvas" class="canvas"></canvas>
-        <div class="header__intro">
+        <div class="header__intro" data-aos="fade-up">
           <h2 class="title title--big header__title">
             @while(have_posts()) @php(the_post())
             @if(get_field('general_data') === true)

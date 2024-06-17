@@ -22,7 +22,6 @@ export default class BurgerMenu {
 
     closeMenuOnClickOutside() {
         document.addEventListener('click', (event) => {
-            console.log(this.isOpen);
             // Close the menu if it's open and the click target is not within the menu container or hamburger
             if (this.isOpen && !event.target.closest('.nav__links-container') && !event.target.closest('.hamburger')) {
                 this.hamburger.classList.remove('is-active');

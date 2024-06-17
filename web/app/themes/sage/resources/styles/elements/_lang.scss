@@ -60,9 +60,24 @@
 
 /** POLYLANG LANGUAGE SWITCHER **/
 .pll-parent-menu-item {
+  &:hover .sub-menu, .sub-menu:hover {
+      transition: 300ms ease visibility, 300ms ease opacity, 300ms ease transform;
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0) scaleY(1);
+  }
+
   & > a {
     pointer-events: none;
-    cursor: default;
+    cursor: pointer;
+  }
+
+  & .sub-menu.lang__current--open {
+        visibility: visible;
+        opacity: 1;
+        transition: 300ms ease visibility, 300ms ease opacity,
+        300ms ease transform;
+        transform: translateY(0) scaleY(1);
   }
 
   & .sub-menu {

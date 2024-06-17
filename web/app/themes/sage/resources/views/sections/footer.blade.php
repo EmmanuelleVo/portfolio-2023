@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="footer" data-aos="fade-up">
 
   <nav class="footer__nav nav o-wrapper" aria-label="{{ wp_get_nav_menu_name('secondary_navigation') }}">
     <div class="footer__nav-wrapper">

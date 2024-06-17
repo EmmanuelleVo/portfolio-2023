@@ -8,23 +8,23 @@
   <div class="page__wrapper">
     <div id="js" class="about o-wrapper">
       @if(get_field('is_about_page') === true)
-        <h1 class="title title--medium">@field('name')</h1>
+        <h1 class="title title--medium" data-aos="fade-up">@field('name')</h1>
         <div class="about__container">
           {{-- <figure class="about__figure">
             <img src="@field('image', 'url')" alt="@field('image', 'url')" class="about__image">
           </figure> --}}
-          <div class="about__figure" style="background-image: url('@field('image', 'url')');"></div>
+          <div class="about__figure" style="background-image: url('@field('image', 'url')');" data-aos="fade-up" data-aos-delay="200"></div>
           <div class="about__content">
-            <div class="about__roles">
+            <div class="about__roles" data-aos="fade-up" data-aos-delay="400">
               <span class="title title--small alternateRoles">@field('role_1')</span>
               <span class="title title--small alternateRoles">@field('role_2')</span>
               {{-- TODO:ANIMATION --}}
             </div>
-            <div class="wysiwyg">
+            <div class="wysiwyg" data-aos="fade-up" data-aos-delay="600">
               @field('about_content')
             </div>
 
-            <div class="about__competences">
+            <div class="about__competences" data-aos="fade-up">
               <span class="title title--small">{{ __('Mes compétences', 'sage') }}</span>
               <ul class="about__competences-list wysiwyg">
                 @for ($i = 1; $i <= 3; $i++)

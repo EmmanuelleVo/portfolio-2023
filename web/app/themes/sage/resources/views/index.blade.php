@@ -17,17 +17,23 @@
   'post_type' => 'project',
   'orderby'        => 'date',
   'order'          => 'desc',
-
+  'paged'          => get_query_var('paged') ?: 1,
   ])
 
   <div class="page__wrapper">
     <div class="o-wrapper">
       <h2 class="title title--medium">{{ __('Mes projets', 'sage') }}</h2>
       <div class="card__container">
+        @php
+            $delay = 0;
+        @endphp
         @posts
-        @include('partials.project-card')
+            @include('partials.project-card', ['delay' => $delay])
+            @php
+                $delay += 200;
+            @endphp
         @endposts
-      </div>
+    </div>
     </div>
   </div>
 

@@ -17,10 +17,16 @@
     <div class="o-wrapper">
       <h2 class="title title--medium">{{ __('Mes projets', 'sage') }}</h2>
       <div class="card__container">
+        @php
+            $delay = 0;
+        @endphp
         @posts
-          @include('partials.project-card')
+            @include('partials.project-card', ['delay' => $delay])
+            @php
+                $delay += 200;
+            @endphp
         @endposts
-      </div>
+    </div>
       {{--TODO: pagination--}}
       <div class="pagination">
         {!! posts_nav_link(); !!}
