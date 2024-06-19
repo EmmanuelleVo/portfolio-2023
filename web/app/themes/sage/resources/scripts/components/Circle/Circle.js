@@ -42,7 +42,6 @@ export default class Circle {
         }
         this.position.y +=  this.speed.y * this.randomDirection
         this.position.x += this.speed.x * this.randomDirection
-        //console.log(Math.round(Math.random()) * 2 - 1)
 
 
         //Interact with the mouse

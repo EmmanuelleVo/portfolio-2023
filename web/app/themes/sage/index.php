@@ -3,6 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="icon" href="<?= asset('images/favicon.ico') ?>" type="image/x-icon">
+    <link rel="shortcut icon" href="<?= asset('images/favicon.ico')?>" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= asset('images/favicon-32x32.png')?>">
+
+    
+    <link rel="manifest" href="<?= asset('images/site.webmanifest')?>">
+
     <!--TODO:WP_HEAD-->
     <?php wp_head(); ?>
     <!--<link rel="stylesheet" href="resources/styles/app.scss"> --><!--app/themes/sage/dist/styles/main.css-->
@@ -10,13 +19,7 @@
 
   <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
-    <?php /*if (has_nav_menu('primary_navigation')): */?><!--
-      <nav class="nav-primary" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
-        <?/*= wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'echo' => false]) */?>
-      </nav>
-    --><?php /*endif; */?>
     <?php do_action('get_header'); ?>
-
     <div id="app">
       <?php echo view(app('sage.view'), app('sage.data'))->render(); ?>
     </div>

@@ -34,8 +34,8 @@ export default async (app) => {
    */
   /* TODO: PROD change URL*/
   app
-    .setUrl('http://localhost:3000')
-    .setProxyUrl('http://portfolio-2023.test')
+    .setUrl('https://emmanuelle-vo.be') //'http://localhost:3000'
+    .setProxyUrl('') // http://portfolio-2023.test
     .watch(['resources/views', 'app']);
 
   /**

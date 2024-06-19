@@ -28,7 +28,6 @@ export default class CirclesAnimation {
     }
     
     loadCircles() {
-        console.log(this.circlesCount);
         for (let i = 0; i < this.circlesCount; i++) {
             this.circles.push(new Circle(this.canvas, this.ctx, this.mouse))
         }

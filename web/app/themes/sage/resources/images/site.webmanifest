@@ -1,0 +1,10 @@
+{
+    "name": "Portfolio - Emmanuelle Vo",
+    "short_name": "Portfolio - Emmanuelle Vo",
+    "description": "Emmanuelle Vo's Portfolio",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000"
+  }
+  

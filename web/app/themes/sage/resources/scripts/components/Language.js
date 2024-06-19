@@ -14,8 +14,6 @@ export default class Language {
                 
                 this.closeSubMenu();
             }
-            console.log(event);
-            console.log(event.target.querySelector('.sub-menu'));
             // if (!this.languageMenu.contains(event.relatedTarget)) {
             //     this.closeSubMenu();
             // }
