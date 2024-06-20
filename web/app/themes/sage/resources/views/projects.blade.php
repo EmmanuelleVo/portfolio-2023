@@ -9,7 +9,7 @@
   'meta_key'       => 'date',
   'orderby'        => 'meta_value',
   'order'          => 'desc',
-  'posts_per_page' => 2,
+  //'posts_per_page' => 2,
   'paged'          => get_query_var('paged') ?: 1,
   ])
 
