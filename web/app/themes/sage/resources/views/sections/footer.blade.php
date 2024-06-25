@@ -1,6 +1,7 @@
 <footer class="footer" data-aos="fade-up">
 
   <nav class="footer__nav nav o-wrapper" aria-label="{{ wp_get_nav_menu_name('secondary_navigation') }}">
+    <h2 class="u-visually-hidden">{{ __('Navigation secondaire', 'sage') }}</h2>
     <div class="footer__nav-wrapper">
       {!! wp_nav_menu(['theme_location' => 'secondary_navigation', 'menu_class' => 'nav__links', 'echo' => false]) !!}
     </div>

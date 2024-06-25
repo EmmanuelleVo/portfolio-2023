@@ -6,7 +6,9 @@
 
 namespace App;
 
+use Roots\Acorn\Assets\Asset\Asset;
 use StoutLogic\AcfBuilder\FieldsBuilder;
+
 use function Roots\bundle;
 
 /**
@@ -16,7 +18,21 @@ use function Roots\bundle;
  */
 add_action('wp_enqueue_scripts', function () {
     bundle('app')->enqueue();
+    // Enqueue the preload link
+    echo '<link rel="preload" href="' . Asset('styles/app.css') . '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">';
+    // Ensures the link is considered high priority
+    echo '<noscript><link rel="stylesheet" href="' . Asset('styles/app.css') . '"></noscript>';
 }, 100);
+
+/**
+ * Add defer attribute to app.js
+ */
+add_filter('script_loader_tag', function ($tag, $handle) {
+    if ($handle === 'app/0') {
+        return str_replace(' src', ' defer src', $tag);
+    }
+    return $tag;
+}, 10, 2);
 
 /**
  * Register the theme assets with the block editor.

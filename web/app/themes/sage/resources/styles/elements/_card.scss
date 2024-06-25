@@ -103,6 +103,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     transition: color 350ms ease-in-out;
+    z-index: 10;
   }
 
   &__date{

@@ -1,7 +1,21 @@
 <header class="header">
+  <h1 class="u-visually-hidden">
+    @if (is_home() || is_front_page())
+      {{ get_bloginfo('name') }}
+    @elseif (is_singular())
+      {{ get_the_title() }}
+    @elseif (is_archive())
+      {{ get_the_archive_title() }}
+    @elseif (is_search())
+      Résultats de recherche pour : {{ get_search_query() }}
+    @else
+      {{ get_the_title() }}
+    @endif
+  </h1>
   @if (has_nav_menu('primary_navigation'))
     <div class="header__nav">
       <nav class="nav-primary nav o-wrapper" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
+        <h2 class="u-visually-hidden">{{ __('Navigation principale', 'sage') }}</h2>
         <div class="header__nav-logo">
           <a href="{{ pll_home_url()}}" class="u-absolute" title="{{ __('Home', 'sage') }}">
             <span class="u-visually-hidden">{{ __('Home', 'sage') }}</span>
@@ -19,7 +33,7 @@
           </svg>
         </div>
         <div class="nav__wrapper">
-          <button class="hamburger hamburger--collapse" type="button">
+          <button class="hamburger hamburger--collapse" type="button" aria-label="Open the menu">
             <span class="hamburger-box">
               <span class="hamburger-inner"></span>
             </span>

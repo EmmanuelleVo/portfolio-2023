@@ -4,7 +4,7 @@
     <span class="project__date" data-aos="fade-up" data-aos-delay="200"><time datetime="{{ date('c', strtotime(get_field('date', false, false))) }}">@field('date')</time></span>
     <div class="project__container">
       <figure class="project__figure-container" data-aos="fade-up" data-aos-delay="400">
-        <img src="@field('main_image', 'url')" alt="" class="project__figure">
+        <img src="@field('main_image', 'url')" alt="{{ get_field('title') }}" class="project__figure" loading="lazy">
       </figure>
       <div class="">
         <div class="project__content wysiwyg" data-aos="fade-up" data-aos-delay="600">
@@ -53,7 +53,7 @@
               {{ $i }}
             </button>--}}
             <figure class="tab__figure @if($i===1) tab__figure--active @endif" data-tab-figure="{{ $i }}">
-              <img src="@field($field_name, 'url')" alt="@field($field_name, 'alt')"
+              <img src="@field($field_name, 'url')" alt="@field($field_name, 'alt')" loading="lazy"
                    class="tab__link @if($i===1) tab__link--active @endif" data-for-tab="{{ $i }}">
             </figure>
             @endfield

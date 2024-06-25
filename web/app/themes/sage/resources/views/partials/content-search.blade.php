@@ -17,7 +17,7 @@
 <article @php(post_class('card'))>
   <div class="card__figure-container">
     <figure class="card__figure">
-      <img src="@field('main_image', 'url')" alt="" class="card__img">
+      <img src="@field('main_image', 'url')" alt="{{ get_field('title') }}" class="card__img">
     </figure>
   </div>
   <h2 class="title card__title">@title</h2>
